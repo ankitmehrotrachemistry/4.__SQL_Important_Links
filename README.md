@@ -1,5 +1,7 @@
 # SQL Theory
 
+## Done upto Pg 14(SQL Problems for Single Table - Level I)    
+
 **1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
 A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.
 
