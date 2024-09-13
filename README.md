@@ -33,3 +33,15 @@ This query will select all those rows from the table Students where the value of
 ```sql
 SELECT * FROM Employees WHERE EmpName like 'A%' ;
 ```
+**6). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
+
+**7). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
+
+**8). Cluster and Non-Cluster Index :**
+| Clustered Index | Non-Clustered Index |
+|----------|----------|
+| The clustered index is faster.    | The non-clustered index is slower. |
+| The clustered index requires less memory for operations.    | The non-Clustered index requires more memory for operations.   | 
+| A table can have only one clustered index.    | A table can have multiple non-clustered indexes. |
+| In the Clustered index, the Clustered key defines the order of data within the table.    | In the Non-Clustered index, the index key defines the order of data within the index.   | 
+| In a clustered index, the index is the main data.    | In the Non-Clustered index, the index is a copy of data. |
