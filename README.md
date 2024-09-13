@@ -253,6 +253,25 @@ WHERE salary NOT IN(SELECT Max(salary)
 FROM employee))
 ```
 
+**11.3). SQL Query to get second highest salary from the following table.**
+
+![image](https://github.com/user-attachments/assets/ab41d077-31d4-4fa0-a84f-563bb96e12d6)
+
+**Method 1**
+```sql
+SELECT * FROM employee;
+
+SELECT MAX(e_salary) FROM employee
+WHERE e_salary NOT IN (SELECT MAX(e_salary)FROM employee);
+```
+
+**Method 2**
+```sql
+SELECT MAX(Salary) AS salary 
+FROM Employees 
+WHERE Salary < (SELECT MAX(Salary) FROM Employees);
+```
+
 **12). SQL Query to  find the total number of customers who placed orders in each quarter of the last year.**
 
 ```sql
@@ -272,6 +291,15 @@ WHERE SaleDate >= DATEADD(year, -1, GETDATE())
 GROUP BY ProductCategory  
 ORDER BY TotalSales DESC, TotalSales ASC  
 LIMIT 2;  
+```
+
+**14). SQL Query to  get the last record from a table.**
+
+```sql
+SELECT * 
+FROM your_table_name 
+ORDER BY your_primary_key_column DESC
+LIMIT 1;
 ```
 
 ## JOIN Based Questions
