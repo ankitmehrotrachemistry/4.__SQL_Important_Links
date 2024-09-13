@@ -73,14 +73,61 @@ SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 
 # SQL query
 
-**1). SQL query to find the names of employees starting with ‘A’.**
+**1). SQL query to find the names of employees starting with ‘A’**
 
 ```sql
 SELECT * FROM Employees WHERE EmpName like 'A%' ;
 ```
 
-**2). How can you create an empty table from an existing table?**
+**2). SQL query to create an empty table from an existing table**
 
 ```sql
 Select * into studentcopy from student where 1=2
+```
+
+**3). SQL query to fetch common records from two tables**
+
+```sql
+Select studentID from student INTERSECT Select StudentID from Exam
+```
+
+**4). SQL query to fetch alternate records from a table**
+
+Records can be fetched for both Odd and Even row numbers -  
+
+To display even numbers-  
+```sql
+Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=0
+```
+
+To display odd numbers-  
+```sql
+Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=1
+```
+
+**5). SQL query to select unique records from a table**
+
+```sql
+Select DISTINCT StudentID, StudentName from Student
+```
+
+**6). SQL query to  fetch first 5 characters of the string**
+
+There are many ways to fetch first 5 characters of the string -
+```sql
+Select SUBSTRING(StudentName,1,5) as studentname from student
+```
+
+```sql
+Select LEFT(Studentname,5) as studentname from student
+```
+
+**7). SQL query to find the top 5 customers with the highest total order amounts**
+
+```sql
+SELECT CustomerID, SUM(OrderAmount) AS TotalOrderAmount  
+FROM Orders  
+GROUP BY CustomerID  
+ORDER BY TotalOrderAmount DESC  
+LIMIT 5;  
 ```
