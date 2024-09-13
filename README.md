@@ -189,6 +189,31 @@ FROM SalesData
 GROUP BY Month;  
 ```
 
+**11). SQL Query to find the nth highest salary in an employee table.**
+
+```sql
+SELECT Salary  
+FROM Employees  
+WHERE Salary IN (  
+  SELECT TOP 1 Salary  
+  FROM (  
+    SELECT Salary, ROW_NUMBER() OVER (ORDER BY Salary DESC) AS RowNum  
+    FROM Employees  
+  ) AS Subquery  
+  WHERE RowNum = n  
+);  
+```
+
+**12). SQL Query to  find the total number of customers who placed orders in each quarter of the last year.**
+
+```sql
+SELECT DATEPART(quarter, OrderDate) AS Quarter, COUNT(DISTINCT CustomerID) AS Customers  
+FROM Orders  
+WHERE OrderDate >= DATEADD(year, -1, GETDATE())  
+GROUP BY DATEPART(quarter, OrderDate)  
+ORDER BY Quarter;  
+```
+
 ## JOIN Based Questions
 
 **1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
@@ -198,4 +223,46 @@ SELECT e.EmployeeID, m.ManagerName
 FROM Employees e
 LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
 
+```
+
+**2). SQL query to find employees who have never placed an order.**
+
+```sql
+SELECT e.EmployeeID, e.EmployeeName  
+FROM Employees e  
+LEFT JOIN Orders o ON e.EmployeeID = o.CustomerID  
+WHERE o.CustomerID IS NULL;
+
+```
+
+**3). SQL query to find the department with the highest average salary for employees who have been with the company for more than 2 years.**
+
+```sql
+SELECT d.DepartmentName, AVG(e.Salary) AS AverageSalary  
+FROM Employees e  
+INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID  
+WHERE e.HireDate < DATEADD(year, -2, GETDATE())  
+GROUP BY d.DepartmentName  
+ORDER BY AverageSalary DESC  
+LIMIT 1;  
+
+```
+
+**4). SQL query to find the manager hierarchy for a specific employee, showing all levels up to the CEO.**
+
+```sql
+WITH ManagerHierarchy (EmployeeID, ManagerID, Level) AS (  
+  SELECT EmployeeID, ManagerID, 1 AS Level  
+  FROM Employees  
+  WHERE EmployeeID = <employee_id>  
+  UNION ALL  
+  SELECT e.EmployeeID, m.ManagerID, h.Level + 1  
+  FROM Employees e  
+  INNER JOIN ManagerHierarchy h ON e.EmployeeID = h.ManagerID  
+  INNER JOIN Employees m ON e.ManagerID = m.EmployeeID  
+  WHERE m.ManagerID IS NOT NULL  
+)  
+SELECT EmployeeID, ManagerID, Level  
+FROM ManagerHierarchy  
+ORDER BY Level DESC;  
 ```
