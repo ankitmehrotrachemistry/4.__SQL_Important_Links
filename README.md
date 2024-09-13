@@ -292,7 +292,7 @@ ON e.DepartmentID = dept_avg.DepartmentID
 WHERE e.Salary > dept_avg.AvgSalary;  
 ```
 
-### Tricky Interview Question
+## Tricky Interview Question
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436" width="400" height="300" />
