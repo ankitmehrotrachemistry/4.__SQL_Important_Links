@@ -45,3 +45,17 @@ SELECT * FROM Employees WHERE EmpName like 'A%' ;
 | A table can have only one clustered index.    | A table can have multiple non-clustered indexes. |
 | In the Clustered index, the Clustered key defines the order of data within the table.    | In the Non-Clustered index, the index key defines the order of data within the index.   | 
 | In a clustered index, the index is the main data.    | In the Non-Clustered index, the index is a copy of data. |
+
+**9). DROP and TRUNCATE statements :**
+| DROP | TRUNCATE |
+|----------|----------|
+| The DROP command is used to remove the table definition and its contents.    | Whereas the TRUNCATE command is used to delete all the rows from the table. |
+| In the DROP command, table space is freed from memory.    | While the TRUNCATE command does not free the table space from memory.   | 
+| In the DROP command, a view of the table does not exist.    | While in this command, a view of the table exists. |
+| The DROP command is quick to perform but gives rise to complications.    | While this command is faster than DROP.   | 
+
+**10). How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
+DISTINCT is useful in certain circumstances, but it has drawbacks that it can increase the load on the query engine to perform the sort (since it needs to compare the result set to itself to remove duplicates). We can remove duplicate entries using the following options:
+- Remove duplicates using row numbers.
+- Remove duplicates using self-Join.
+- Remove duplicates using group by.
