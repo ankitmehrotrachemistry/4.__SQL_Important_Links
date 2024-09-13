@@ -6,7 +6,7 @@
 
 **2). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
 
-**3). Stored Procedures** are created to perform one or more DML operations on databases. It is nothing but a group of SQL statements that accepts some input in the form of parameters and performs some task and may or may not return a value.  
+**3). Stored Procedures** Stored Procedure is a function consists of many SQL statement to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
 
 **4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
@@ -28,11 +28,6 @@ This query will select all those rows from the table Students where the value of
 
 **5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them.
 
-**SQL query to find the names of employees starting with ‘A’.**
-
-```sql
-SELECT * FROM Employees WHERE EmpName like 'A%' ;
-```
 **6.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
 
 **6.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.  
@@ -49,6 +44,8 @@ SELECT * FROM Employees WHERE EmpName like 'A%' ;
 | In the Clustered index, the Clustered key defines the order of data within the table.    | In the Non-Clustered index, the index key defines the order of data within the index.   | 
 | In a clustered index, the index is the main data.    | In the Non-Clustered index, the index is a copy of data. |
 
+[What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
+
 **9). DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
 |----------|----------|
@@ -64,14 +61,30 @@ DISTINCT is useful in certain circumstances, but it has drawbacks that it can in
 - Remove duplicates using group by.
 
 **11). What is the difference between COALESCE() & ISNULL()?**  
-**COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
+- **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
 Syntax:
 ```sql
 SELECT column(s), CAOLESCE(expression_1,….,expression_n)FROM table_name;
 ```
 
-**ISNULL():** The ISNULL function has different uses in SQL Server and MySQL. In SQL Server, ISNULL() function is used to replace NULL values.
+- **ISNULL():** The ISNULL function has different uses in SQL Server and MySQL. In SQL Server, ISNULL() function is used to replace NULL values.
 Syntax:
 ```sql
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
+```
+
+**12). 
+
+# SQL query
+
+**1). SQL query to find the names of employees starting with ‘A’.**
+
+```sql
+SELECT * FROM Employees WHERE EmpName like 'A%' ;
+```
+
+**2). How can you create an empty table from an existing table?**
+
+```sql
+Select * into studentcopy from student where 1=2
 ```
