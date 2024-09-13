@@ -92,7 +92,8 @@ WHERE EmpName like 'A%' ;
 **2). SQL query to create an empty table from an existing table**
 
 ```sql
-Select *into studentcopy  
+Select *
+into studentcopy  
 from student  
 where 1=2
 ```
@@ -101,8 +102,10 @@ where 1=2
 
 ```sql
 Select studentID  
-from student
-INTERSECT Select StudentID from Exam
+from student  
+INTERSECT  
+Select StudentID  
+from Exam  
 ```
 
 **4). SQL query to fetch alternate records from a table**
