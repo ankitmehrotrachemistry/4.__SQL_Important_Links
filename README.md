@@ -214,6 +214,17 @@ GROUP BY DATEPART(quarter, OrderDate)
 ORDER BY Quarter;  
 ```
 
+**13). SQL Query to to find the product categories with the highest and lowest total sales for the previous year.**
+
+```sql
+SELECT ProductCategory, SUM(SalesAmount) AS TotalSales  
+FROM SalesData  
+WHERE SaleDate >= DATEADD(year, -1, GETDATE())  
+GROUP BY ProductCategory  
+ORDER BY TotalSales DESC, TotalSales ASC  
+LIMIT 2;  
+```
+
 ## JOIN Based Questions
 
 **1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
@@ -266,3 +277,81 @@ SELECT EmployeeID, ManagerID, Level
 FROM ManagerHierarchy  
 ORDER BY Level DESC;  
 ```
+
+**5). SQL query to find employees who earn more than the average salary in their department.**
+
+```sql
+SELECT e.EmployeeID, e.EmployeeName, e.Salary, e.DepartmentID  
+FROM Employees e  
+JOIN (  
+    SELECT DepartmentID, AVG(Salary) AS AvgSalary  
+    FROM Employees  
+    GROUP BY DepartmentID  
+) dept_avg  
+ON e.DepartmentID = dept_avg.DepartmentID  
+WHERE e.Salary > dept_avg.AvgSalary;  
+```
+
+### Tricky Interview Question
+
+![image](https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436)
+
+1. Find the total number of orders placed by each customer, excluding orders placed in June.
+
+SQL Code:
+SELECT c.name, COUNT(*) AS num_orders
+FROM Customers c
+INNER JOIN Orders o ON c.customer_id = o.customer_id
+WHERE MONTH(order_date) <> 6
+GROUP BY c.name
+
+2. Find the customer who has placed the highest total order value.
+
+SQL Code:
+SELECT c.name, SUM(order_total) AS total_order_value
+FROM Customers c
+INNER JOIN Orders o ON c.customer_id = o.customer_id
+GROUP BY c.name
+ORDER BY total_order_value DESC
+LIMIT 1;
+
+3. List all orders placed on specific dates (eg., 2023-07-04 and 2023-07-06) and their corresponding customer names.
+
+SQL Code:
+SELECT c.name, o.order_date, o.order_total
+FROM Customers c
+INNER JOIN Orders o ON c.customer_id = o.customer_id
+WHERE order_date IN ('2023-07-04', '2023-07-06');
+
+4. Find the average order value for each city.
+
+SQL Code:
+SELECT c.city, AVG(o.order_total) AS avg_order_value
+FROM Customers c
+INNER JOIN Orders o ON c.customer_id = o.customer_id
+GROUP BY c.city
+
+5. Identify customers who haven't placed any orders.
+
+SQL Code:
+SELECT c.name
+FROM Customers c
+LEFT JOIN Orders o ON c.customer_id = o.customer_id
+WHERE o.order_id IS NULL;
+
+6. Find the month with the highest total order value.
+
+SQL Code:
+SELECT MONTH(order_date) AS order_month, SUM(order_total) AS total_order_value
+FROM Orders
+GROUP BY MONTH(order_date)
+ORDER BY total_order_value DESC
+LIMIT 1;
+
+7. Write a query to display the top 2 customers with the most orders in the last 30 days.
+
+SQL Code:
+SELECT c.name, COUNT(*) AS num_orders
+FROM Customers c
+INNER JOIN Orders o ON c.customer_id = o.customer_id
+WHERE order_date >= DATE_SUB (CURDATE)
