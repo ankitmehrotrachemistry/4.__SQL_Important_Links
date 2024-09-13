@@ -150,7 +150,7 @@ ORDER BY last_name ASC, first_name DESC;
 **2.5). SQL query to update the prices in a product column by increasing 5% of the prices in each row.**
 
 ```sql
-UPDATE table_name SET price = price*1.05; 
+UPDATE table_name SET price = price*1.05;  
 ```
 
 **2.6). SQL query to calculate the average price of products in each category.**
