@@ -1,6 +1,4 @@
-# SQL_Important_Links
-
-### Most Important SQL Queries and Concepts
+# SQL Theory
 
 **1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
 
