@@ -31,7 +31,7 @@ This query will select all those rows from the table Students where the value of
 **6.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
-**7). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
+**7). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes. Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE). They can be used for data validation, enforcing business logic, or maintaining data consistency.  
 
 **8). Cluster and Non-Cluster Index :**
 | Clustered Index | Non-Clustered Index |
@@ -71,24 +71,38 @@ Syntax:
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 ```
 
+**12). How can you optimize a slow-running query?**  
+There are several techniques, including:
+
+- Using appropriate indexes
+- Avoiding unnecessary joins and subqueries
+- Using efficient functions and operators
+- Analyzing execution plans to identify bottlenecks
+
 # SQL query
 
 **1). SQL query to find the names of employees starting with ‘A’**
 
 ```sql
-SELECT * FROM Employees WHERE EmpName like 'A%' ;
+SELECT *  
+FROM Employees  
+WHERE EmpName like 'A%' ;  
 ```
 
 **2). SQL query to create an empty table from an existing table**
 
 ```sql
-Select * into studentcopy from student where 1=2
+Select *into studentcopy  
+from student  
+where 1=2
 ```
 
 **3). SQL query to fetch common records from two tables**
 
 ```sql
-Select studentID from student INTERSECT Select StudentID from Exam
+Select studentID  
+from student
+INTERSECT Select StudentID from Exam
 ```
 
 **4). SQL query to fetch alternate records from a table**
@@ -97,25 +111,32 @@ Records can be fetched for both Odd and Even row numbers -
 
 To display even numbers-  
 ```sql
-Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=0
+Select studentId  
+from (Select rowno, studentId from student)  
+where mod(rowno,2)=0  
 ```
 
 To display odd numbers-  
 ```sql
-Select studentId from (Select rowno, studentId from student) where mod(rowno,2)=1
+Select studentId  
+from (Select rowno, studentId from student)  
+where mod(rowno,2)=1  
 ```
 
 **5). SQL query to select unique records from a table**
 
 ```sql
-Select DISTINCT StudentID, StudentName from Student
+Select DISTINCT StudentID, StudentName  
+from Student
 ```
 
 **6). SQL query to  fetch first 5 characters of the string**
 
 There are many ways to fetch first 5 characters of the string -
 ```sql
-Select SUBSTRING(StudentName,1,5) as studentname from student
+Select SUBSTRING(StudentName,1,5)  
+as studentname  
+from student
 ```
 
 ```sql
@@ -130,4 +151,23 @@ FROM Orders
 GROUP BY CustomerID  
 ORDER BY TotalOrderAmount DESC  
 LIMIT 5;  
+```
+
+**8). SQL query to find the average salary for each department, excluding employees with salaries above a certain threshold.**
+
+```sql
+SELECT Department, AVG(Salary) AS AverageSalary
+FROM (
+  SELECT Department, Salary
+  FROM Employees
+  WHERE Salary <= (SELECT MAX(Salary) FROM Employees) / 2
+) AS Subquery
+GROUP BY Department;
+```
+
+**9). SQL query to find the difference in days between the order date and the ship date for each order.**
+
+```sql
+
+
 ```
