@@ -122,6 +122,49 @@ from student
 where 1=2
 ```
 
+**2.2). SQL query to find duplicates in a table**
+
+```sql
+SELECT username, email, COUNT(*)
+FROM users
+GROUP BY username, email
+HAVING COUNT(*) > 1
+```
+
+**2.3). SQL Query to  update the salary of employees in the employees table.**
+
+```sql
+UPDATE employees
+SET salary = 60000
+WHERE employee_id = 123;
+```
+
+**2.4). SQL Query to sort records in the ‘employees’ table by last_name in ascending order and then by first_name in descending order.**
+
+```sql
+SELECT * 
+FROM employees
+ORDER BY last_name ASC, first_name DESC;
+```
+
+**2.5). SQL query to update the prices in a product column by increasing 5% of the prices in each row.**
+
+```sql
+UPDATE table_name SET price = price*1.05; 
+```
+
+**2.6). SQL query to calculate the average price of products in each category.**
+
+```sql
+SELECT 
+    category, 
+    AVG(price) AS average_price 
+FROM 
+    table_name 
+GROUP BY 
+    category;
+```
+
 **3). SQL query to fetch common records from two tables**
 
 ```sql
@@ -155,6 +198,31 @@ where mod(rowno,2)=1
 ```sql
 Select DISTINCT StudentID, StudentName  
 from Student
+```
+
+**6). SQL Query to Find Duplicate Records in a Table.**
+
+```sql
+SELECT 
+    emp_name, 
+    COUNT(*) AS DuplicateCount 
+FROM 
+    Employees 
+GROUP BY 
+    emp_name 
+HAVING 
+    COUNT(*) > 1;
+```
+
+**6). SQL Query to Calculate the Total Number of Orders Placed by each Customer.**
+
+![image](https://github.com/user-attachments/assets/7ce08f12-0b5e-4c48-b413-afe38e41dd2f)
+
+```sql
+SELECT cust_ID, 
+       COUNT(*) AS TotalOrders 
+FROM Orders 
+GROUP BY cust_ID;
 ```
 
 **6). SQL query to  fetch first 5 characters of the string**
@@ -212,6 +280,22 @@ SELECT Month,
 FROM SalesData  
 GROUP BY Month;  
 ```
+
+**11). SQL query to find those employees who receive the highest salary of each department. Return employee name and department ID**
+
+![image](https://github.com/user-attachments/assets/787f9ecd-f430-4c1d-b9af-7893f518b1b4)
+
+```sql
+SELECT 
+    e.emp_name, e.dep_id
+FROM 
+    employees e
+WHERE 
+    e.salary = ( SELECT MAX(salary) 
+                FROM employees e2 
+                WHERE e2.dep_id = e.dep_id );
+```
+
 
 **11.1). SQL Query to find the nth highest salary in an employee table.**
 
@@ -367,6 +451,15 @@ JOIN (
 ) dept_avg  
 ON e.DepartmentID = dept_avg.DepartmentID  
 WHERE e.Salary > dept_avg.AvgSalary;  
+```
+
+**6). SQL query to Find employees with salary more than their manager's salary.**
+
+```sql
+SELECT e.EmployeeID, e.EmployeeName, e.Salary, m.EmployeeName AS ManagerName, m.Salary AS ManagerSalary
+FROM Employees e
+JOIN Employees m ON e.ManagerID = m.EmployeeID
+WHERE e.Salary > m.Salary;
 ```
 
 ## Tricky Interview Question
