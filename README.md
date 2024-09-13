@@ -28,7 +28,7 @@ This query will select all those rows from the table Students where the value of
 
 **6.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
 
-**6.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.  
+**6.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
 **7). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
