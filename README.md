@@ -298,15 +298,18 @@ WHERE e.Salary > dept_avg.AvgSalary;
 
 1. Find the total number of orders placed by each customer, excluding orders placed in June.
 
+```sql
 SQL Code:
 SELECT c.name, COUNT(*) AS num_orders
 FROM Customers c
 INNER JOIN Orders o ON c.customer_id = o.customer_id
 WHERE MONTH(order_date) <> 6
 GROUP BY c.name
+```
 
 2. Find the customer who has placed the highest total order value.
 
+```sql
 SQL Code:
 SELECT c.name, SUM(order_total) AS total_order_value
 FROM Customers c
@@ -314,44 +317,55 @@ INNER JOIN Orders o ON c.customer_id = o.customer_id
 GROUP BY c.name
 ORDER BY total_order_value DESC
 LIMIT 1;
+```
 
 3. List all orders placed on specific dates (eg., 2023-07-04 and 2023-07-06) and their corresponding customer names.
 
+```sql
 SQL Code:
 SELECT c.name, o.order_date, o.order_total
 FROM Customers c
 INNER JOIN Orders o ON c.customer_id = o.customer_id
 WHERE order_date IN ('2023-07-04', '2023-07-06');
+```
 
 4. Find the average order value for each city.
 
+```sql
 SQL Code:
 SELECT c.city, AVG(o.order_total) AS avg_order_value
 FROM Customers c
 INNER JOIN Orders o ON c.customer_id = o.customer_id
 GROUP BY c.city
+```
 
 5. Identify customers who haven't placed any orders.
 
+```sql
 SQL Code:
 SELECT c.name
 FROM Customers c
 LEFT JOIN Orders o ON c.customer_id = o.customer_id
 WHERE o.order_id IS NULL;
+```
 
 6. Find the month with the highest total order value.
 
+```sql
 SQL Code:
 SELECT MONTH(order_date) AS order_month, SUM(order_total) AS total_order_value
 FROM Orders
 GROUP BY MONTH(order_date)
 ORDER BY total_order_value DESC
 LIMIT 1;
+```
 
 7. Write a query to display the top 2 customers with the most orders in the last 30 days.
 
 SQL Code:
+```sql
 SELECT c.name, COUNT(*) AS num_orders
 FROM Customers c
 INNER JOIN Orders o ON c.customer_id = o.customer_id
 WHERE order_date >= DATE_SUB (CURDATE)
+```
