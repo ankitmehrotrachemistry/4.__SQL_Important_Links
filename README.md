@@ -165,6 +165,20 @@ GROUP BY
     category;
 ```
 
+**2.6). You have an ‘employees’ table and want to classify salaries into categories like "High", "Medium", and "Low". Write SQL Query for the same.**
+
+```sql
+SELECT 
+    employee_id,
+    salary,
+    CASE 
+        WHEN salary > 70000 THEN 'High'
+        WHEN salary BETWEEN 50000 AND 70000 THEN 'Medium'
+        ELSE 'Low'
+    END AS salary_category
+FROM employees;
+```
+
 **3). SQL query to fetch common records from two tables**
 
 ```sql
@@ -173,6 +187,16 @@ from student
 INTERSECT  
 Select StudentID  
 from Exam  
+```
+
+**3.1). SQL Query - If you have two tables, table1 and table2, and you want to find common records based on the same columns.**
+
+```sql
+SELECT id, name
+ FROM table1
+INTERSECT
+ SELECT id, name
+FROM table2;
 ```
 
 **4). SQL query to fetch alternate records from a table**
