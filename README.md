@@ -295,7 +295,7 @@ WHERE e.Salary > dept_avg.AvgSalary;
 ### Tricky Interview Question
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436" width="400" height="350" />
+  <img src="https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436" width="400" height="300" />
 </p>
 
 **1. Find the total number of orders placed by each customer, excluding orders placed in June.**
