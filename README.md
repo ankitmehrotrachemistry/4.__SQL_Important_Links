@@ -126,13 +126,13 @@ FROM Department;
 
 **Output**
 
-| **emp_name** | 
-|Admin|
-| Finance| 
-| HR |
-|IT |
-| Manoj| 
-| Rahul |
+| **emp_name** |  
+|Admin|  
+| Finance|   
+| HR |  
+|IT |  
+| Manoj|   
+| Rahul |  
 
 # SQL query
 
