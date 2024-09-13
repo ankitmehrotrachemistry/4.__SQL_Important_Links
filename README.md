@@ -71,8 +71,6 @@ Syntax:
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 ```
 
-**12). 
-
 # SQL query
 
 **1). SQL query to find the names of employees starting with ‘A’.**
