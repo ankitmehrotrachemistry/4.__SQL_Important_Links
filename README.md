@@ -81,12 +81,36 @@ There are several techniques, including:
 
 # SQL query
 
-**1). SQL query to find the names of employees starting with ‘A’**
+**1.1). SQL query to find the names of employees starting with ‘A’**
 
 ```sql
 SELECT *  
 FROM Employees  
 WHERE EmpName like 'A%' ;  
+```
+
+**1.2). SQL query to find the names of employees whose name ends with ‘N’**
+
+```sql
+SELECT EmpName
+FROM Table_name 
+WHERE EmpName LIKE '%N' ;  
+```
+
+**1.3). SQL query to find the names of employees having ‘M’ in any position**
+
+```sql
+SELECT EmpName
+FROM Table_name 
+WHERE EmpName LIKE '%M%'; 
+```
+
+**1.4). SQL query to find the names of employees not having ‘M’ anywhere**
+
+```sql
+SELECT EmpName
+FROM Table_name 
+WHERE EmpName NOT LIKE '%M%'; 
 ```
 
 **2). SQL query to create an empty table from an existing table**
@@ -189,7 +213,7 @@ FROM SalesData
 GROUP BY Month;  
 ```
 
-**11). SQL Query to find the nth highest salary in an employee table.**
+**11.1). SQL Query to find the nth highest salary in an employee table.**
 
 ```sql
 SELECT Salary  
@@ -202,6 +226,31 @@ WHERE Salary IN (
   ) AS Subquery  
   WHERE RowNum = n  
 );  
+```
+
+**11.2). SQL Query to get the third-highest salary of an employee from employee_table.**
+
+**Method 1 :**
+
+```sql
+SELECT TOP 1 salary
+FROM (
+  SELECT TOP 3 salary
+  FROM employee_table
+  ORDER BY salary DESC
+) AS emp
+ORDER BY salary ASC;
+```
+
+**Method 2 :**
+
+```sql
+SELECT Max(salary) 
+FROM employee 
+WHERE salary < (SELECT Max(salary) 
+FROM employee 
+WHERE salary NOT IN(SELECT Max(salary) 
+FROM employee))
 ```
 
 **12). SQL Query to  find the total number of customers who placed orders in each quarter of the last year.**
