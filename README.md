@@ -1,10 +1,23 @@
 # SQL Theory
 
 **1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
+A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.
+
+**2). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
 
 **2). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
 
+**Use and Advantage of Foreign Key**
+
 **3). Stored Procedures** Stored Procedure is a function consists of many SQL statement to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
+
+**3.1). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**
+
+**3.2). How to handle Errors in the Stored Procedure ?**
+
+**3.3). What is the difference between Stored Procedure and Functions ?**
+
+**3.4). Can Functions return Multiple Values in SQL ?**
 
 **4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
@@ -24,7 +37,9 @@ WHERE ROLL_NO IN (20,21,23);
 
 This query will select all those rows from the table Students where the value of the field ROLL_NO is either 20 or 21 or 23.
 
-**5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them.
+**5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
+
+**Types of Joins**
 
 **6.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
 
@@ -32,6 +47,12 @@ This query will select all those rows from the table Students where the value of
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
 **7). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes. Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE). They can be used for data validation, enforcing business logic, or maintaining data consistency.  
+
+**How to Create Triggers in SQL?**
+
+**Give Example of Custom Triggers in SQL?**
+
+**7.2). Difference between Cursor and Trigger in DBMS :**
 
 **8). Cluster and Non-Cluster Index :**
 | Clustered Index | Non-Clustered Index |
@@ -78,6 +99,42 @@ There are several techniques, including:
 - Avoiding unnecessary joins and subqueries
 - Using efficient functions and operators
 - Analyzing execution plans to identify bottlenecks
+
+**13). A Query is taking more time to execute. How can we fine tune it?**
+
+**14). Create Views in Database. Why we create SQL View?**
+
+**15). What are Temp Tables? What is its Scope? Its types.**
+
+**16). Window Function in SQL**
+
+**17). What is the difference between UNION and INTERSECTION ?**
+The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
+
+![image](https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33)
+
+Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
+
+```sql
+SELECT emp_name
+FROM Employee
+WHERE dept_id = 'D1'
+
+UNION
+
+SELECT dept_name
+FROM Department;
+```
+
+**Output**
+
+| **emp_name** | 
+|Admin|
+| Finance| 
+| HR |
+|IT |
+| Manoj| 
+| Rahul |
 
 # SQL query
 
