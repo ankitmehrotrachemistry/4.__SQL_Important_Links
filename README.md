@@ -171,6 +171,20 @@ GROUP BY Department;
 **9). SQL query to find the difference in days between the order date and the ship date for each order.**
 
 ```sql
+SELECT OrderID,  
+DATEDIFF(day, OrderDate, ShipDate)  
+AS DaysDiff  
+FROM Orders;
 
+```
+
+## JOIN Based Questions
+
+**1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
+
+```sql
+SELECT e.EmployeeID, m.ManagerName
+FROM Employees e
+LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
 
 ```
