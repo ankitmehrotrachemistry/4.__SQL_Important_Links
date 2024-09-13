@@ -2,11 +2,13 @@
 
 ### Most Important SQL Queries and Concepts
 
-**Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
+**1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
 
-**Stored Procedures** are created to perform one or more DML operations on databases. It is nothing but a group of SQL statements that accepts some input in the form of parameters and performs some task and may or may not return a value.  
+**2). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
 
-**BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
+**3). Stored Procedures** are created to perform one or more DML operations on databases. It is nothing but a group of SQL statements that accepts some input in the form of parameters and performs some task and may or may not return a value.  
+
+**4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
 
 ```sql
@@ -14,7 +16,7 @@ SELECT * FROM Students
 WHERE ROLL_NO BETWEEN 20 AND 30;  
 ```
 
-**IN:** The IN operator is used to check for values contained in specific sets.  
+**4.2). IN:** The IN operator is used to check for values contained in specific sets.  
 For example, 
 
 ```sql
@@ -24,3 +26,10 @@ WHERE ROLL_NO IN (20,21,23);
 
 This query will select all those rows from the table Students where the value of the field ROLL_NO is either 20 or 21 or 23.
 
+**5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them.
+
+**SQL query to find the names of employees starting with ‘A’.**
+
+```sql
+SELECT * FROM Employees WHERE EmpName like 'A%' ;
+```
