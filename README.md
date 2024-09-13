@@ -178,6 +178,17 @@ FROM Orders;
 
 ```
 
+**10). SQL Query to pivot data from rows to columns, showing the total sales for each product category by month.**
+
+```sql
+SELECT Month,  
+       SUM(CASE WHEN ProductCategory = 'Electronics' THEN Sales ELSE 0 END) AS Electronics,  
+       SUM(CASE WHEN ProductCategory = 'Clothing' THEN Sales ELSE 0 END) AS Clothing,  
+       ... (add more categories)  
+FROM SalesData  
+GROUP BY Month;  
+```
+
 ## JOIN Based Questions
 
 **1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
