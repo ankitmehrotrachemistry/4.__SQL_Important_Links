@@ -59,3 +59,16 @@ DISTINCT is useful in certain circumstances, but it has drawbacks that it can in
 - Remove duplicates using row numbers.
 - Remove duplicates using self-Join.
 - Remove duplicates using group by.
+
+**11). What is the difference between COALESCE() & ISNULL()?**  
+**COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
+Syntax:
+```sql
+SELECT column(s), CAOLESCE(expression_1,….,expression_n)FROM table_name;
+```
+
+**ISNULL():** The ISNULL function has different uses in SQL Server and MySQL. In SQL Server, ISNULL() function is used to replace NULL values.
+Syntax:
+```sql
+SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
+```
