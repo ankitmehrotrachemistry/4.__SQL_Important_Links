@@ -1,4 +1,4 @@
-# SQL Theory
+# 1). SQL Theory
 
 ## Done upto Pg 14(SQL Problems for Single Table - Level I)    
 
@@ -136,7 +136,7 @@ FROM Department;
 | Manoj|   
 | Rahul |  
 
-# SQL query
+# 2). SQL query
 
 **1.1). SQL query to find the names of employees starting with ‘A’**
 
@@ -467,7 +467,18 @@ ORDER BY your_primary_key_column DESC
 LIMIT 1;
 ```
 
-## JOIN Based Questions
+## 3). Comprehensive Question
+
+![image](https://github.com/user-attachments/assets/c0863fcc-1a3c-4df2-9a21-dd25c3c1d5cb)
+
+![image](https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327)
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+## 4). JOIN Based Questions
 
 **1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
 
@@ -543,7 +554,7 @@ JOIN Employees m ON e.ManagerID = m.EmployeeID
 WHERE e.Salary > m.Salary;
 ```
 
-## Tricky Interview Question
+## 5). Tricky Interview Question
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436" width="400" height="300" />
