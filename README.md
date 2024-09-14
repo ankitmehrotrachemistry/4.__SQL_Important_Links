@@ -467,7 +467,7 @@ ORDER BY your_primary_key_column DESC
 LIMIT 1;
 ```
 
-## 3). Comprehensive Question
+# 3). Comprehensive Question
 
 ![image](https://github.com/user-attachments/assets/c0863fcc-1a3c-4df2-9a21-dd25c3c1d5cb)
 
@@ -478,7 +478,7 @@ LIMIT 1;
 SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
 ```
 
-## 4). JOIN Based Questions
+# 4). JOIN Based Questions
 
 **1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
 
@@ -554,7 +554,7 @@ JOIN Employees m ON e.ManagerID = m.EmployeeID
 WHERE e.Salary > m.Salary;
 ```
 
-## 5). Tricky Interview Question
+# 5). Tricky Interview Question
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436" width="400" height="300" />
