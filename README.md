@@ -469,7 +469,7 @@ LIMIT 1;
 
 # 3). Comprehensive Question
 
-![image](https://github.com/user-attachments/assets/c0863fcc-1a3c-4df2-9a21-dd25c3c1d5cb)
+![image](https://github.com/user-attachments/assets/daf1b7c0-3b06-4c2e-898d-3e5f20461aaa)
 
 ![image](https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327)
 
