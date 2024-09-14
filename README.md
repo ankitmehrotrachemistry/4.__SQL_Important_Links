@@ -13,11 +13,13 @@ A primary key is a column of a table that uniquely identifies each tuple (row) i
 
 **4.1). Stored Procedures** Stored Procedure is a function consists of many SQL statement to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
 
-**4.2). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**
+**4.2). How we can create Stored Procedures?**
 
-**4.3). How to handle Errors in the Stored Procedure ?**
+**4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**
 
-**4.4). What is the difference between Stored Procedure and Functions ?**
+**4.4). How to handle Errors in the Stored Procedure ?**
+
+**4.5). What is the difference between Stored Procedure and Functions ?**
 
 **5). Can Functions return Multiple Values in SQL ?**
 
