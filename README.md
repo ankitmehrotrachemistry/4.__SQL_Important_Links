@@ -497,38 +497,47 @@ SELECT GETDATE();
 
 **4). Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.**  
 ```sql
-SELECT SUBSTRING(EmpLname, 1, 4) FROM EmployeeInfo;
+SELECT SUBSTRING(EmpLname, 1, 4)
+FROM EmployeeInfo;
 ```
 
 **5). Write a query to fetch only the place name(string before brackets) from the Address column of EmployeeInfo table.**  
 ```sql
-SELECT SUBSTRING(Address, 1, CHARINDEX('(',Address)) FROM EmployeeInfo;
+SELECT SUBSTRING(Address, 1, CHARINDEX('(',Address))
+FROM EmployeeInfo;
 ```
 
 **6). Write a query to create a new table which consists of data and structure copied from the other table.**  
 Using the SELECT INTO command:  
 ```sql
-SELECT * INTO NewTable FROM EmployeeInfo WHERE 1 = 0;
+SELECT * INTO NewTable
+FROM EmployeeInfo
+WHERE 1 = 0;
 ```
 Using the CREATE command in MySQL:
 ```sql
-CREATE TABLE NewTable AS SELECT * FROM EmployeeInfo;
+CREATE TABLE NewTable AS
+SELECT *
+FROM EmployeeInfo;
 ```
 
 **7).  Write q query to find all the employees whose salary is between 50000 to 100000.**  
 ```sql
-SELECT * FROM EmployeePosition WHERE Salary BETWEEN '50000' AND '100000';
+SELECT * FROM EmployeePosition
+WHERE Salary BETWEEN '50000' AND '100000';
 ```
 
 **8). Write a query to find the names of employees that begin with ‘S’**  
 ```sql
-SELECT * FROM EmployeeInfo WHERE EmpFname LIKE 'S%';
+SELECT * FROM EmployeeInfo
+WHERE EmpFname LIKE 'S%';
 ```
 
 **9). Write a query to fetch top N records.**  
 By using the LIMIT command in MySQL:
 ```sql
-SELECT * FROM EmpPosition ORDER BY Salary DESC LIMIT N;
+SELECT * FROM EmpPosition
+ORDER BY Salary DESC LIMIT N;
 ```
 
 **10). Write a query to retrieve the EmpFname and EmpLname in a single column as “FullName”. The first name and the last name must be separated with space.**  
@@ -538,27 +547,36 @@ SELECT CONCAT(EmpFname, ' ', EmpLname) AS 'FullName' FROM EmployeeInfo;
 
 **11). Write a query find number of employees whose DOB is between 02/05/1970 to 31/12/1975 and are grouped according to gender**  
 ```sql
-SELECT COUNT(*), Gender FROM EmployeeInfo WHERE DOB BETWEEN '02/05/1970 ' AND '31/12/1975' GROUP BY Gender;
+SELECT COUNT(*), Gender
+FROM EmployeeInfo
+WHERE DOB BETWEEN '02/05/1970 ' AND '31/12/1975'
+GROUP BY Gender;
 ```
 
 **12). Write a query to fetch all the records from the EmployeeInfo table ordered by EmpLname in descending order and Department in the ascending order.**  
 ```sql
-SELECT * FROM EmployeeInfo ORDER BY EmpFname desc, Department asc;
+SELECT * FROM EmployeeInfo
+ORDER BY EmpFname desc, Department asc;
 ```
 
 **13). Write a query to fetch details of employees whose EmpLname ends with an alphabet ‘A’ and contains five alphabets.**  
 ```sql
-SELECT * FROM EmployeeInfo WHERE EmpLname LIKE '____a';
+SELECT * FROM EmployeeInfo
+WHERE EmpLname LIKE '____a';
 ```
 
 **14). Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.**  
 ```sql
-SELECT * FROM EmployeeInfo WHERE EmpFname NOT IN ('Sanjay','Sonia');
+SELECT * FROM EmployeeInfo
+WHERE EmpFname
+NOT IN ('Sanjay','Sonia');
 ```
 
 **15). Write a query to fetch details of employees with the address as “DELHI(DEL)”.**  
 ```sql
-SELECT * FROM EmployeeInfo WHERE Address LIKE 'DELHI(DEL)%';
+SELECT * FROM EmployeeInfo
+WHERE Address
+LIKE 'DELHI(DEL)%';
 ```
 
 **16). Write a query to fetch all employees who also hold the managerial position. (JOIN Question)**  
@@ -581,7 +599,9 @@ ORDER BY EmpDeptCount ASC;
 
 To retrieve the even records from a table, you have to use the MOD() function as follows:
 ```sql
-SELECT EmpID FROM (SELECT rowno, EmpID from EmployeeInfo) WHERE MOD(rowno,2)=0;
+SELECT EmpID
+FROM (SELECT rowno, EmpID from EmployeeInfo)
+WHERE MOD(rowno,2)=0;
 ```
 
 Similarly, to retrieve the odd records from a table, you can write a query as follows:
@@ -607,9 +627,12 @@ SELECT DISTINCT Salary FROM EmployeePosition E1
 
 To retrieve two maximum salaries, you can write a query as below:  
 ```sql
-SELECT DISTINCT Salary FROM EmployeePosition E1 
- WHERE 2 >= (SELECTCOUNT(DISTINCT Salary) FROM EmployeePosition E2 
-  WHERE E1.Salary <= E2.Salary) ORDER BY E1.Salary DESC;
+SELECT DISTINCT Salary
+FROM EmployeePosition E1 
+WHERE 2 >= (SELECTCOUNT(DISTINCT Salary)
+FROM EmployeePosition E2 
+WHERE E1.Salary <= E2.Salary)
+ORDER BY E1.Salary DESC;
 ```
 
 **21). Write a query to find the Nth highest salary from the table without using TOP/limit keyword.**  
@@ -658,32 +681,43 @@ ORDER BY salary ASC;
 
 To display the first record from the EmployeeInfo table, you can write a query as follows:
 ```sql
-SELECT * FROM EmployeeInfo WHERE EmpID = (SELECT MIN(EmpID) FROM EmployeeInfo);
+SELECT *
+FROM EmployeeInfo
+WHERE EmpID = (SELECT MIN(EmpID) FROM EmployeeInfo);
 ```
 
 To display the last record from the EmployeeInfo table, you can write a query as follows:
 ```sql
-SELECT * FROM EmployeeInfo WHERE EmpID = (SELECT MAX(EmpID) FROM EmployeeInfo);
+SELECT * FROM EmployeeInfo
+WHERE EmpID = (SELECT MAX(EmpID) FROM EmployeeInfo);
 ```
 
 **27). Write a query to add email validation to your database.**  
 ```sql
-SELECT Email FROM EmployeeInfo WHERE NOT REGEXP_LIKE(Email, ‘[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}’, ‘i’);
+SELECT Email
+FROM EmployeeInfo
+WHERE NOT REGEXP_LIKE(Email, ‘[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}’, ‘i’);
 ```
 
 **28). Write a query to retrieve Departments who have less than 2 employees working in it.**  
 ```sql
-SELECT DEPARTMENT, COUNT(EmpID) as 'EmpNo' FROM EmployeeInfo GROUP BY DEPARTMENT HAVING COUNT(EmpD) < 2;
+SELECT DEPARTMENT, COUNT(EmpID) as 'EmpNo'
+FROM EmployeeInfo
+GROUP BY DEPARTMENT
+HAVING COUNT(EmpD) < 2;
 ```
 
 **29). Write a query to retrieve EmpPostion along with total salaries paid for each of them.**  
 ```sql
-SELECT EmpPosition, SUM(Salary) from EmployeePosition GROUP BY EmpPosition;
+SELECT EmpPosition, SUM(Salary)
+from EmployeePosition
+GROUP BY EmpPosition;
 ```
 
 **30). Write a query to fetch 50% records from the EmployeeInfo table.**  
 ```sql
-SELECT * FROM EmployeeInfo WHERE EmpID <= (SELECT COUNT(EmpID)/2 from EmployeeInfo);
+SELECT * FROM EmployeeInfo
+WHERE EmpID <= (SELECT COUNT(EmpID)/2 from EmployeeInfo);
 ```
 
 **31).  How do you read the last five records from a database using a SQL query?**  
@@ -706,7 +740,9 @@ WHERE row_num = 10;
 
 **33). Write a query to get the last record from a table.**  
 ```sql
-SELECT * FROM your_table_name ORDER BY your_primary_key_column DESC LIMIT 1;
+SELECT * FROM your_table_name
+ORDER BY your_primary_key_column
+DESC LIMIT 1;
 ```
 
 # 4). JOIN Based Questions
