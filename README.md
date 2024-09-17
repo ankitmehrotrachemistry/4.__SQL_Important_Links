@@ -485,95 +485,129 @@ SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
 SELECT COUNT(*) FROM EmployeeInfo WHERE Department = 'HR';
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**3). Write a query to get the current date.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT GETDATE();
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**4). Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT SUBSTRING(EmpLname, 1, 4) FROM EmployeeInfo;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**5). Write a query to fetch only the place name(string before brackets) from the Address column of EmployeeInfo table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT SUBSTRING(Address, 1, CHARINDEX('(',Address)) FROM EmployeeInfo;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**6). Write a query to create a new table which consists of data and structure copied from the other table.**  
+Using the SELECT INTO command:  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * INTO NewTable FROM EmployeeInfo WHERE 1 = 0;
+```
+Using the CREATE command in MySQL:
+```sql
+CREATE TABLE NewTable AS SELECT * FROM EmployeeInfo;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**7).  Write q query to find all the employees whose salary is between 50000 to 100000.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeePosition WHERE Salary BETWEEN '50000' AND '100000';
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**8). Write a query to find the names of employees that begin with ‘S’**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpFname LIKE 'S%';
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**9). Write a query to fetch top N records.**  
+By using the LIMIT command in MySQL:
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmpPosition ORDER BY Salary DESC LIMIT N;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**10). Write a query to retrieve the EmpFname and EmpLname in a single column as “FullName”. The first name and the last name must be separated with space.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT CONCAT(EmpFname, ' ', EmpLname) AS 'FullName' FROM EmployeeInfo;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**11). Write a query find number of employees whose DOB is between 02/05/1970 to 31/12/1975 and are grouped according to gender**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT COUNT(*), Gender FROM EmployeeInfo WHERE DOB BETWEEN '02/05/1970 ' AND '31/12/1975' GROUP BY Gender;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**12). Write a query to fetch all the records from the EmployeeInfo table ordered by EmpLname in descending order and Department in the ascending order.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo ORDER BY EmpFname desc, Department asc;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**13). Write a query to fetch details of employees whose EmpLname ends with an alphabet ‘A’ and contains five alphabets.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpLname LIKE '____a';
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**14). Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpFname NOT IN ('Sanjay','Sonia');
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**15). Write a query to fetch details of employees with the address as “DELHI(DEL)”.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE Address LIKE 'DELHI(DEL)%';
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**16). Write a query to fetch all employees who also hold the managerial position. (JOIN Question)**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT E.EmpFname, E.EmpLname, P.EmpPosition 
+FROM EmployeeInfo E
+INNER JOIN
+EmployeePosition P ON
+E.EmpID = P.EmpID AND P.EmpPosition IN ('Manager');
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**17). Write a query to fetch the department-wise count of employees sorted by department’s count in ascending order.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT Department, count(EmpID) AS EmpDeptCount 
+FROM EmployeeInfo GROUP BY Department 
+ORDER BY EmpDeptCount ASC;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**18). Write a query to calculate the even and odd records from a table.**  
+
+To retrieve the even records from a table, you have to use the MOD() function as follows:
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT EmpID FROM (SELECT rowno, EmpID from EmployeeInfo) WHERE MOD(rowno,2)=0;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+Similarly, to retrieve the odd records from a table, you can write a query as follows:
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT EmpID FROM (SELECT rowno, EmpID from EmployeeInfo) WHERE MOD(rowno,2)=1;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**19). Write a SQL query to retrieve employee details from EmployeeInfo table who have a date of joining in the EmployeePosition table. (Two Table Question)**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo E 
+WHERE EXISTS 
+(SELECT * FROM EmployeePosition P WHERE E.EmpId = P.EmpId);
 ```
+
+**20). Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table.**  
+
+To retrieve two minimum salaries, you can write a query as below:  
+```sql
+SELECT DISTINCT Salary FROM EmployeePosition E1 
+ WHERE 2 >= (SELECTCOUNT(DISTINCT Salary)FROM EmployeePosition E2 
+  WHERE E1.Salary >= E2.Salary) ORDER BY E1.Salary DESC;
+```
+
+To retrieve two maximum salaries, you can write a query as below:  
+```sql
+SELECT DISTINCT Salary FROM EmployeePosition E1 
+ WHERE 2 >= (SELECTCOUNT(DISTINCT Salary) FROM EmployeePosition E2 
+  WHERE E1.Salary <= E2.Salary) ORDER BY E1.Salary DESC;
+```
+
+// Just Before Sapient Interview.
 
 **1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
 ```sql
