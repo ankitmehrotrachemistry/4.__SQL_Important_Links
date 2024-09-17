@@ -479,7 +479,8 @@ LIMIT 1;
 
 **1). Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT UPPER(EmpFname) AS EmpName  
+FROM EmployeeInfo;
 ```
 
 **2). Write a query to fetch the number of employees working in the department ‘HR’.**  
