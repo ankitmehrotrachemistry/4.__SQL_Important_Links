@@ -9,7 +9,9 @@ A primary key is a column of a table that uniquely identifies each tuple (row) i
 
 **3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
 
-**Use and Advantage of Foreign Key**
+**Use and Advantage of Foreign Key**  
+
+**2). CTE (Common Table Expression)**  
 
 **4.1). Stored Procedures** Stored Procedure is a function consists of many SQL statement to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
 
