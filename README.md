@@ -475,14 +475,14 @@ LIMIT 1;
 
 ![image](https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327)
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**1). Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
 ```sql
 SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**2). Write a query to fetch the number of employees working in the department ‘HR’.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT COUNT(*) FROM EmployeeInfo WHERE Department = 'HR';
 ```
 
 **1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
