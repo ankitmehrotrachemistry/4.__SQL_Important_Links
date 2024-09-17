@@ -12,10 +12,65 @@ A primary key is a column of a table that uniquely identifies each tuple (row) i
 **Use and Advantage of Foreign Key**  
 
 **2). CTE (Common Table Expression)**  
+A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
 
-**4.1). Stored Procedures** Stored Procedure is a function consists of many SQL statement to access the database system. Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
+**When you would use it ?**
 
-**4.2). How we can create Stored Procedures?**
+You would use a CTE when you want to:
+- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
+- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
+- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
+- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
+
+[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
+
+**4.1). Stored Procedures**  
+- Stored Procedure is a function consists of many SQL statement to access the database system. 
+- Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
+- A SQL Stored Procedure is a named set of one or more SQL statements that can be executed together. 
+- It is a database object that is created and stored in the database management system. 
+- Stored procedures are typically used for performing common database operations, data processing, and automation of complex tasks. 
+- They are particularly valuable for enhancing database security, modularity, and code reusability.
+
+[SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
+
+**When you would use it?**  
+You would use SQL Stored Procedures when you want to:
+**1. Enhance security:** By allowing controlled access to database operations and reducing the risk of SQL injection attacks.
+**2. Modularize code:** To break down complex SQL logic into manageable, reusable modules for improved maintainability.
+**3. Improve performance:** By reducing the overhead of repeatedly sending SQL statements to the database.
+**4. Automate tasks:** For automating routine or complex database operations and data processing tasks.
+**5. Implement business logic:** To encapsulate business rules and processes directly in the database.
+
+**4.2). How we can create Stored Procedures?**  
+The syntax for creating and executing a SQL Stored Procedure varies slightly depending on the database management system (DBMS) being used. However, here's a generic template:
+```sql
+CREATE PROCEDURE procedure_name
+    (parameter1 data_type, parameter2 data_type, ...)
+AS
+BEGIN
+    -- SQL statements and logic
+END;
+```
+
+- procedure_name: The name of the stored procedure.
+- (parameter1, parameter2, ...): Optional input parameters for the procedure.
+- data_type: The data type for each parameter.
+- AS BEGIN ... END: The block of SQL statements and logic to be executed by the procedure.
+
+**Example query**
+Here's an example of a simple SQL Stored Procedure in SQL Server that retrieves the names of employees working in a specific department:  
+```sql
+CREATE PROCEDURE GetEmployeesInDepartment
+    @DepartmentID INT
+AS
+BEGIN
+    SELECT EmployeeName
+    FROM Employees
+    WHERE DepartmentID = @DepartmentID;
+END;
+```
+
 
 **4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**
 
