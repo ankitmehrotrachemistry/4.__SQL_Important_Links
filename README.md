@@ -485,7 +485,9 @@ FROM EmployeeInfo;
 
 **2). Write a query to fetch the number of employees working in the department ‘HR’.**  
 ```sql
-SELECT COUNT(*) FROM EmployeeInfo WHERE Department = 'HR';
+SELECT COUNT(*)
+FROM EmployeeInfo
+WHERE Department = 'HR';
 ```
 
 **3). Write a query to get the current date.**  
