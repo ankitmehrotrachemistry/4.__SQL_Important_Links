@@ -593,7 +593,7 @@ WHERE EXISTS
 (SELECT * FROM EmployeePosition P WHERE E.EmpId = P.EmpId);
 ```
 
-**20). Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table.**  
+**20). Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table. (Two Table Question)**  
 
 To retrieve two minimum salaries, you can write a query as below:  
 ```sql
@@ -609,66 +609,101 @@ SELECT DISTINCT Salary FROM EmployeePosition E1
   WHERE E1.Salary <= E2.Salary) ORDER BY E1.Salary DESC;
 ```
 
-// Just Before Sapient Interview.
-
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**21). Write a query to find the Nth highest salary from the table without using TOP/limit keyword.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT Salary 
+FROM EmployeePosition E1 
+WHERE N-1 = ( 
+      SELECT COUNT( DISTINCT ( E2.Salary ) ) 
+      FROM EmployeePosition E2 
+      WHERE E2.Salary >  E1.Salary );
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**22). Write a query to retrieve duplicate records from a table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT EmpID, EmpFname, Department COUNT(*) 
+FROM EmployeeInfo GROUP BY EmpID, EmpFname, Department 
+HAVING COUNT(*) > 1;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**23). Write a query to retrieve the list of employees working in the same department.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+Select DISTINCT E.EmpID, E.EmpFname, E.Department 
+FROM EmployeeInfo E, Employee E1 
+WHERE E.Department = E1.Department AND E.EmpID != E1.EmpID;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**24). Write a query to retrieve the last 3 records from the EmployeeInfo table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE
+EmpID <=3 UNION SELECT * FROM
+(SELECT * FROM EmployeeInfo E ORDER BY E.EmpID DESC) 
+AS E1 WHERE E1.EmpID <=3;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**25).  Write a query to find the third-highest salary from the EmpPosition table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT TOP 1 salary
+FROM(
+SELECT TOP 3 salary
+FROM employee_table
+ORDER BY salary DESC) AS emp
+ORDER BY salary ASC;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**26). Write a query to display the first and the last record from the EmployeeInfo table.**  
+
+To display the first record from the EmployeeInfo table, you can write a query as follows:
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpID = (SELECT MIN(EmpID) FROM EmployeeInfo);
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+To display the last record from the EmployeeInfo table, you can write a query as follows:
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpID = (SELECT MAX(EmpID) FROM EmployeeInfo);
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**27). Write a query to add email validation to your database.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT Email FROM EmployeeInfo WHERE NOT REGEXP_LIKE(Email, ‘[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}’, ‘i’);
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**28). Write a query to retrieve Departments who have less than 2 employees working in it.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT DEPARTMENT, COUNT(EmpID) as 'EmpNo' FROM EmployeeInfo GROUP BY DEPARTMENT HAVING COUNT(EmpD) < 2;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**29). Write a query to retrieve EmpPostion along with total salaries paid for each of them.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT EmpPosition, SUM(Salary) from EmployeePosition GROUP BY EmpPosition;
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**30). Write a query to fetch 50% records from the EmployeeInfo table.**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * FROM EmployeeInfo WHERE EmpID <= (SELECT COUNT(EmpID)/2 from EmployeeInfo);
 ```
 
-**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+**31).  How do you read the last five records from a database using a SQL query?**  
 ```sql
-SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+SELECT * 
+FROM your_table
+ORDER BY id DESC
+LIMIT 5;
+```
+
+**32). Write a SQL query that will provide you with the 10th-highest employee salary from an Employee table.**  
+```sql
+SELECT salary
+FROM (
+    SELECT salary, ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
+    FROM Employee
+) AS ranked_salary
+WHERE row_num = 10;
+```
+
+**33). Write a query to get the last record from a table.**  
+```sql
+SELECT * FROM your_table_name ORDER BY your_primary_key_column DESC LIMIT 1;
 ```
 
 # 4). JOIN Based Questions
