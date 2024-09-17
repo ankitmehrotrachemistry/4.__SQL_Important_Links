@@ -115,7 +115,9 @@ There are several techniques, including:
 **17). What is the difference between UNION and INTERSECTION ?**
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
 
-![image](https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="400" height="250" />
+</p>
 
 Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
 
@@ -368,7 +370,9 @@ GROUP BY Month;
 
 **20.1). SQL query to find those employees who receive the highest salary of each department. Return employee name and department ID**
 
-![image](https://github.com/user-attachments/assets/787f9ecd-f430-4c1d-b9af-7893f518b1b4)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/787f9ecd-f430-4c1d-b9af-7893f518b1b4" width="400" height="250" />
+</p>
 
 ```sql
 SELECT 
@@ -473,9 +477,13 @@ LIMIT 1;
 
 # 3). Comprehensive Question
 
-![image](https://github.com/user-attachments/assets/daf1b7c0-3b06-4c2e-898d-3e5f20461aaa)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/daf1b7c0-3b06-4c2e-898d-3e5f20461aaa" width="400" height="250" />
+</p>
 
-![image](https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327" width="400" height="250" />
+</p>
 
 **1). Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
 ```sql
@@ -606,7 +614,9 @@ WHERE MOD(rowno,2)=0;
 
 Similarly, to retrieve the odd records from a table, you can write a query as follows:
 ```sql
-SELECT EmpID FROM (SELECT rowno, EmpID from EmployeeInfo) WHERE MOD(rowno,2)=1;
+SELECT EmpID
+FROM (SELECT rowno, EmpID from EmployeeInfo)
+WHERE MOD(rowno,2)=1;
 ```
 
 **19). Write a SQL query to retrieve employee details from EmployeeInfo table who have a date of joining in the EmployeePosition table. (Two Table Question)**  
