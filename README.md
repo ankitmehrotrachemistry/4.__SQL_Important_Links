@@ -480,6 +480,161 @@ LIMIT 1;
 SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
 ```
 
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
+**1). SQL query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
+```sql
+SELECT UPPER(EmpFname) AS EmpName FROM EmployeeInfo;
+```
+
 # 4). JOIN Based Questions
 
 **1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
