@@ -34,13 +34,13 @@ You would use a CTE when you want to:
 
 [SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
 
-**When you would use it?**  
-You would use SQL Stored Procedures when you want to:
-**1. Enhance security:** By allowing controlled access to database operations and reducing the risk of SQL injection attacks.
-**2. Modularize code:** To break down complex SQL logic into manageable, reusable modules for improved maintainability.
-**3. Improve performance:** By reducing the overhead of repeatedly sending SQL statements to the database.
-**4. Automate tasks:** For automating routine or complex database operations and data processing tasks.
-**5. Implement business logic:** To encapsulate business rules and processes directly in the database.
+**When you would use it?**   
+You would use SQL Stored Procedures when you want to:  
+**1. Enhance security:** By allowing controlled access to database operations and reducing the risk of SQL injection attacks.  
+**2. Modularize code:** To break down complex SQL logic into manageable, reusable modules for improved maintainability.  
+**3. Improve performance:** By reducing the overhead of repeatedly sending SQL statements to the database.  
+**4. Automate tasks:** For automating routine or complex database operations and data processing tasks.  
+**5. Implement business logic:** To encapsulate business rules and processes directly in the database.  
 
 **4.2). How we can create Stored Procedures?**  
 The syntax for creating and executing a SQL Stored Procedure varies slightly depending on the database management system (DBMS) being used. However, here's a generic template:
