@@ -185,10 +185,13 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 - In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
 - Triggers are piece of logic or set of SQL statements which you want to execute when certain events (insert-update-delete) happens.
 - Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE).
-- They can be used for data validation, enforcing business logic, or maintaining data consistency.  
-[Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
+- They can be used for data validation, enforcing business logic, or maintaining data consistency.
+  
+▶️ [Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
 
 **8.2). How to Create Triggers in SQL?**
+
+▶️ [How to Create Insert Trigger Using SQL Server](https://www.youtube.com/watch?v=KLJ29y3qqyk)
 
 **8.3). Give Example of Custom Triggers in SQL?**
 
