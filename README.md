@@ -161,7 +161,9 @@ There are several techniques, including:
 - Using efficient functions and operators
 - Analyzing execution plans to identify bottlenecks
 
-**14). Create Views in Database. Why we create SQL View?**
+**14.1). Create Views in Database. Why we create SQL View?**  
+
+**14.2). Virtual Table in SQL.**  
 
 **15). What are Temporary Tables? What is its Scope? Its types.**
 
