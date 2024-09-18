@@ -72,7 +72,7 @@ END;
 ```
 
 
-**4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**  **OR**  **How to optimize a Stored Procedure or SQL Query?** 
+**4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**    **OR**    **How to optimize a Stored Procedure or SQL Query?** 
 
 
 **4.4). How to handle Errors in the Stored Procedure ?**
