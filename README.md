@@ -73,7 +73,7 @@ END;
 
 **3.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
 
-1. Use SET NOCOUNT ON  
+1. Use SET NOCOUNT ON [SET NOCOUNT ON statement usage and performance benefits in SQL Server](https://www.sqlshack.com/set-nocount-on-statement-usage-and-performance-benefits-in-sql-server/)    
 2. Specify column names instead of using * in SELECT
 statement.  
 3. Use schema name before objects or tablenames.  
