@@ -198,7 +198,7 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 ```
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe" width="400" height="250" />
+  <img src="https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe" width="500" height="300" />
 </p>
 
 ▶️ [19. Clustered Index Vs Non-Clustered Index| Index in SQL by Pandey Guruji in Hindi](https://www.youtube.com/watch?v=BIZTfmuOcm8)
@@ -272,7 +272,7 @@ There are several techniques, including:
 - Virtual Tables are not real tables, but can be interacted with as if they were.  
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4" width="400" height="250" />
+  <img src="https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4" width="700" height="550" />
 </p>
 
 ▶️ [How are virtual tables in SQL used? Virtual Tables in SQL | Nested and complex queries in SQL](https://www.youtube.com/watch?v=NcozPy7TaDw)
@@ -326,10 +326,8 @@ Window functions apply ranking and aggregation functions over a certain window (
 divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
 rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
 
-![image](https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314)
-
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314" width="500" height="350" />
+  <img src="https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314" width="600" height="350" />
 </p>
 
 [SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
@@ -338,7 +336,7 @@ rows within such partitions are put in a certain sequence. (The clause ORDER BY 
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="400" height="250" />
+  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="350" />
 </p>
 
 Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
