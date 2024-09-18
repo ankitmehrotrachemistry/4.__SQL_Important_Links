@@ -180,7 +180,13 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
 
-**8.1). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes. Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE). They can be used for data validation, enforcing business logic, or maintaining data consistency.  
+**8.1). Trigger :**  
+- Trigger is a statement that a system executes automatically when there is any modification to the database.
+- In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
+- Triggers are piece of logic or set of SQL statements which you want to execute when certain events (insert-update-delete) happens.
+- Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE).
+- They can be used for data validation, enforcing business logic, or maintaining data consistency.  
+[Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
 
 **8.2). How to Create Triggers in SQL?**
 
