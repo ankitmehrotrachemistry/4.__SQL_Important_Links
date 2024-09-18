@@ -55,6 +55,8 @@ BEGIN
 END;
 ```
 
+[Learn about Stored Procedures in SQL](https://www.boardinfinity.com/blog/learn-about-stored-procedures-in-sql/)
+
 - procedure_name: The name of the stored procedure.
 - (parameter1, parameter2, ...): Optional input parameters for the procedure.
 - data_type: The data type for each parameter.
@@ -72,6 +74,8 @@ BEGIN
     WHERE DepartmentID = @DepartmentID;
 END;
 ```
+
+▶️ [Passing Large Datasets into SQL Server Stored Procedures](https://www.youtube.com/watch?app=desktop&v=jXBYULaUMMs)
 
 **3.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
 
