@@ -161,11 +161,38 @@ There are several techniques, including:
 - Using efficient functions and operators
 - Analyzing execution plans to identify bottlenecks
 
-**14.1). Create Views in Database. Why we create SQL View?**  
+**14.1). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
+
+Virtual Tables are not real tables, but can be interacted with as if they were.  
+
+**Syntax**
+```sql
+CREATE VIEW employee_attendance AS 
+SELECT first_name, last_name
+FROM employees;
+```
+
+![image](https://github.com/user-attachments/assets/febf19f0-709f-43aa-8c0d-ed7115a6b5e8)
+
+We will update the Table by adding GMail to them :  
+```sql
+UPDATE customers
+SET email = "PPuff@gmail.com"
+WHERE customer_id = 4; // Update all other too in same way
+SELECT * FROM customers;
+```
+
+![image](https://github.com/user-attachments/assets/734e5430-d62d-42b8-a5bc-7d44e1505524)
+
+
+```sql
+CREATE VIEW customer_emails AS 
+SELECT email
+FROM customers;
+```
 
 ▶️ [MySQL VIEWS are awesome](https://www.youtube.com/watch?v=wciubfRhvtM)
 
-**14.2). Virtual Table in SQL.**  
 
 **15). What are Temporary Tables? What is its Scope? Its types.**
 
