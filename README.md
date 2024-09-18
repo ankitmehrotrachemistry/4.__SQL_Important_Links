@@ -72,8 +72,20 @@ END;
 ```
 
 
-**4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?** 
+**4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
 
+1. Use SET NOCOUNT ON  
+2. Specify column names instead of using * in SELECT
+statement.  
+3. Use schema name before objects or tablenames.  
+Example: SELECT EmplD, Name FROM dbo. Employee  
+4. Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections.  
+5. Use EXISTS () instead of COUNT().  
+Example :SELECT Count(1) FROM dbo. Employee  
+Example: IF( EXISTS (SELECT 1 FROM db Employees))  
+6. Use TRANSACTION when required only  
+
+▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
 
 **4.4). How to handle Errors in the Stored Procedure ?**
 
@@ -109,6 +121,35 @@ This query will select all those rows from the table Students where the value of
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
 **8.3). Cluster and Non-Cluster Index :**
+
+**Clustered Index:**  
+- A B-Tree (computed) clustered index is the index that will arrange the rows physically in the memory in sorted order.
+- When the Primary Key is created automatically the Clustered Index is created.
+- An advantage of a clustered index is that searching for a range of values will be fast.
+- A clustered index is internally maintained using a B-Tree data structure leaf node of the b tree of clustered indexes that will contain the table data.
+- You can create only one clustered index for a table.
+
+**Syntax :**  
+```sql
+Create CLUSTERED index IX_Employee_Indexl on Employee_Index(Emp_ID)
+```
+
+**Non-Clustered Index:**  
+- When a Unique Key is created automatically, a Non-clustered Index is created.
+- A non-clustered index is an index that will not arrange the rows physically in the memory in sorted order.
+- An advantage of a non-clustered index is searching for the values that are in a range will be fast.
+- You can create a maximum of 999 non-clustered indexes on a table, which is 254 up to SQL Berver 2005.
+- A non-clustered index is also maintained in a B-Tree data structure but leaf nodes of a B-Tree or non-clustered index contain the pointers to the pages that contain the table data and not the table data directly.
+
+**Syntax :**  
+```sql
+Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
+```
+
+![image](https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe)
+
+▶️ [19. Clustered Index Vs Non-Clustered Index| Index in SQL by Pandey Guruji in Hindi](https://www.youtube.com/watch?v=BIZTfmuOcm8)
+
 | Clustered Index | Non-Clustered Index |
 |----------|----------|
 | The clustered index is faster.    | The non-clustered index is slower. |
