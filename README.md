@@ -239,7 +239,7 @@ There are several techniques, including:
 
 ![image](https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4)
 
-[How are virtual tables in SQL used? Virtual Tables in SQL | Nested and complex queries in SQL](https://www.youtube.com/watch?v=NcozPy7TaDw)
+▶️ [How are virtual tables in SQL used? Virtual Tables in SQL | Nested and complex queries in SQL](https://www.youtube.com/watch?v=NcozPy7TaDw)
 
 **Syntax**
 ```sql
@@ -283,7 +283,7 @@ DROP VIEW [Brazil Customers];
 - They work like a regular table in that you can perform the operations select, insert and delete as for a regular table.
 - If created inside a stored procedure they are destroyed upon completion of the stored procedure.
 
-[Temporary Table in Sql in Hindi | Sql Temporary Table in Hindi](https://www.youtube.com/watch?v=UEJS7hdGqAA)
+▶️ [Temporary Table in Sql in Hindi | Sql Temporary Table in Hindi](https://www.youtube.com/watch?v=UEJS7hdGqAA)
 
 **15). Window Function in SQL**
 
@@ -318,6 +318,17 @@ FROM Department;
 | Rahul |  
 
 **17). What is Transaction?**
+A transaction is a set of SQL statements that should be executed as one unit. That means a transaction ensures that either all of the command succeeds or none of them. If one of the commands in the transaction fails, all of the com-
+mands fail and any data that is modified in the database is rolled back.
+
+[What is Transaction and Transaction Management in SQL SERVER](https://www.youtube.com/watch?v=ocy9J34liQY)
+
+**How to implement Transaction Management in SQL Server?**  
+In order to understand how to implement transaction management in SQL Server, please have a look at the following
+list, which shows the Transaction processing steps.
+1. Begin Transaction.  
+2. Process Database Commands.  
+3. Check for Errors ( if occurs RollBack else Commit).  
 
 # 2). SQL query
 
