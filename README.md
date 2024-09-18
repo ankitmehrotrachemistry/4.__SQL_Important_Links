@@ -321,6 +321,20 @@ DROP VIEW [Brazil Customers];
 
 ▶️ [Temporary Table in Sql in Hindi | Sql Temporary Table in Hindi](https://www.youtube.com/watch?v=UEJS7hdGqAA)
 
+**How to Create a Temporary SQL Table ?**  
+To create a temporary SQL table, we can use the CREATE TABLE statement with the TEMPORARY or TEMP keyword before the table name. Here's an example in SQL:  
+```sql
+CREATE TEMPORARY TABLE temp_table (
+    id INT,
+    name VARCHAR(50),
+    age INT
+);
+```
+
+[SQL Temp Table – How to Create a Temporary SQL Table](https://www.freecodecamp.org/news/sql-temp-table-how-to-create-a-temporary-sql-table/)
+
+Temporary SQL tables are a valuable tool in the world of database management and query optimization. They offer various benefits and can significantly enhance your SQL experience.
+
 **15). Window Function in SQL**
 Window functions apply ranking and aggregation functions over a certain window (set of rows). The window is defined by the OVER clause when used with window functions. the following two things:
 divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
