@@ -317,7 +317,7 @@ FROM Department;
 | Manoj|   
 | Rahul |  
 
-**17). What is Transaction?**
+**17). What is Transaction?**  
 A transaction is a set of SQL statements that should be executed as one unit. That means a transaction ensures that either all of the command succeeds or none of them. If one of the commands in the transaction fails, all of the com-
 mands fail and any data that is modified in the database is rolled back.
 
