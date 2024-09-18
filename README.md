@@ -73,7 +73,7 @@ END;
 
 
 **4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?**    
-                                                    **OR** 
+                                                    **OR**                              
                                 **How to optimize a Stored Procedure or SQL Query?** 
 
 
