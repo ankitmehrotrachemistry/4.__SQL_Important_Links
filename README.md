@@ -34,6 +34,8 @@ You would use a CTE when you want to:
 
 [SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
 
+![image](https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e)
+
 **When you would use it?**   
 You would use SQL Stored Procedures when you want to:  
 **1. Enhance security:** By allowing controlled access to database operations and reducing the risk of SQL injection attacks.  
