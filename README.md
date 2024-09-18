@@ -266,6 +266,13 @@ FROM customers;
 
 **14). What are Temporary Tables? What is its Scope? Its types.**
 
+- Temporary tables are tables that exist temporarily on the SQL Server.
+- Temporary tables are stored in tempdb.
+- They work like a regular table in that you can perform the operations select, insert and delete as for a regular table.
+- If created inside a stored procedure they are destroyed upon completion of the stored procedure.
+
+[Temporary Table in Sql in Hindi | Sql Temporary Table in Hindi](https://www.youtube.com/watch?v=UEJS7hdGqAA)
+
 **15). Window Function in SQL**
 
 **16). What is the difference between UNION and INTERSECTION ?**
@@ -297,6 +304,8 @@ FROM Department;
 |IT |  
 | Manoj|   
 | Rahul |  
+
+**17). What is Transaction?**
 
 # 2). SQL query
 
