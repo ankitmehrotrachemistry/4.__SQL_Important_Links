@@ -34,7 +34,9 @@ You would use a CTE when you want to:
 
 [SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
 
-![image](https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e" width="400" height="250" />
+</p>
 
 **When you would use it?**   
 You would use SQL Stored Procedures when you want to:  
@@ -195,7 +197,9 @@ Create CLUSTERED index IX_Employee_Indexl on Employee_Index(Emp_ID)
 Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 ```
 
-![image](https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe" width="400" height="250" />
+</p>
 
 ▶️ [19. Clustered Index Vs Non-Clustered Index| Index in SQL by Pandey Guruji in Hindi](https://www.youtube.com/watch?v=BIZTfmuOcm8)
 
@@ -267,7 +271,9 @@ There are several techniques, including:
 - A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
 - Virtual Tables are not real tables, but can be interacted with as if they were.  
 
-![image](https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4" width="400" height="250" />
+</p>
 
 ▶️ [How are virtual tables in SQL used? Virtual Tables in SQL | Nested and complex queries in SQL](https://www.youtube.com/watch?v=NcozPy7TaDw)
 
@@ -321,6 +327,10 @@ divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
 rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
 
 ![image](https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314" width="500" height="350" />
+</p>
 
 [SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
 
