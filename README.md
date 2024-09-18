@@ -233,7 +233,17 @@ There are several techniques, including:
 
 **13). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
 
-Virtual Tables are not real tables, but can be interacted with as if they were.  
+- In SQL, a view is a virtual table based on the result-set of an SQL statement.
+- A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+- A view is deleted with the DROP VIEW statement.
+- The following SQL drops the "Brazil Customers" view:
+
+**Syntax**
+```sql
+DROP VIEW [Brazil Customers];
+```
+
+- Virtual Tables are not real tables, but can be interacted with as if they were.  
 
 **Syntax**
 ```sql
