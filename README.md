@@ -92,6 +92,30 @@ Example: IF( EXISTS (SELECT 1 FROM db Employees))
 ▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
 
 **3.4). How to handle Errors in the Stored Procedure ?**
+The TRY..CATCH block is used in SQL Server to gracefully handle exceptions. A TRY block may be used to contain a collection of T-SQL queries. When an error occurs in the TRY block, control is then transferred to the CATCH block, which contains further SQL queries to deal with the problem. System methods like ERROR NUMBER(), ERROR STATE(), and ERROR SEVERITY() can be used in the CATCH block to retrieve information about errors. 
+
+The uspEmpUpdate stored procedure error is handled in the example that follows.  
+
+```sql
+CREATE PROCEDURE uspUpdateEmpSalary
+(
+     @empId int
+     ,@salary float
+)
+AS
+BEGIN TRY
+    UPDATE dbo.Employee
+    SET Salary = @salary
+    WHERE EmployeeID = @empId
+END TRY
+BEGIN CATCH
+    SELECT
+     ERROR_NUMBER() AS ErrorNumber  
+     ,ERROR_SEVERITY() AS ErrorSeverity  
+     ,ERROR_STATE() AS ErrorState  
+     ,ERROR_MESSAGE() AS ErrorMessage;
+END CATCH
+```
 
 **3.5). What is the difference between Stored Procedure and Functions ?**
 
