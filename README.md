@@ -272,7 +272,7 @@ There are several techniques, including:
 - Virtual Tables are not real tables, but can be interacted with as if they were.  
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4" width="700" height="550" />
+  <img src="https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4" width="900" height="550" />
 </p>
 
 ▶️ [How are virtual tables in SQL used? Virtual Tables in SQL | Nested and complex queries in SQL](https://www.youtube.com/watch?v=NcozPy7TaDw)
@@ -336,7 +336,7 @@ rows within such partitions are put in a certain sequence. (The clause ORDER BY 
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="350" />
+  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="450" />
 </p>
 
 Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
