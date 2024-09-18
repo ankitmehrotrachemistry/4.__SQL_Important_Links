@@ -316,6 +316,13 @@ DROP VIEW [Brazil Customers];
 ▶️ [Temporary Table in Sql in Hindi | Sql Temporary Table in Hindi](https://www.youtube.com/watch?v=UEJS7hdGqAA)
 
 **15). Window Function in SQL**
+Window functions apply ranking and aggregation functions over a certain window (set of rows). The window is defined by the OVER clause when used with window functions. the following two things:
+divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
+rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
+
+![image](https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314)
+
+[SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
 
 **16). What is the difference between UNION and INTERSECTION ?**
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
