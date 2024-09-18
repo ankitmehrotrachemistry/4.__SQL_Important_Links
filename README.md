@@ -2,12 +2,12 @@
 
 ## Done upto Pg 14(SQL Problems for Single Table - Level I)    
 
-**1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
+**1.1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
 A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.
 
-**2). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
+**1.2). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
 
-**3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
+**1.3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
 
 **Use and Advantage of Foreign Key**  
 
@@ -24,7 +24,7 @@ You would use a CTE when you want to:
 
 [SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
 
-**4.1). Stored Procedures**  
+**3.1). Stored Procedures**  
 - Stored Procedure is a function consists of many SQL statement to access the database system. 
 - Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
 - A SQL Stored Procedure is a named set of one or more SQL statements that can be executed together. 
@@ -42,7 +42,7 @@ You would use SQL Stored Procedures when you want to:
 **4. Automate tasks:** For automating routine or complex database operations and data processing tasks.  
 **5. Implement business logic:** To encapsulate business rules and processes directly in the database.  
 
-**4.2). How we can create Stored Procedures?**  
+**3.2). How we can create Stored Procedures?**  
 The syntax for creating and executing a SQL Stored Procedure varies slightly depending on the database management system (DBMS) being used. However, here's a generic template:
 ```sql
 CREATE PROCEDURE procedure_name
@@ -71,8 +71,7 @@ BEGIN
 END;
 ```
 
-
-**4.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
+**3.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
 
 1. Use SET NOCOUNT ON  
 2. Specify column names instead of using * in SELECT
@@ -87,13 +86,32 @@ Example: IF( EXISTS (SELECT 1 FROM db Employees))
 
 ▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
 
-**4.4). How to handle Errors in the Stored Procedure ?**
+**3.4). How to handle Errors in the Stored Procedure ?**
 
-**4.5). What is the difference between Stored Procedure and Functions ?**
+**3.5). What is the difference between Stored Procedure and Functions ?**
 
-**5). Can Functions return Multiple Values in SQL ?**
+| Stored Procedure | Functions |
+|----------|----------|
+| It is a mini batch program or set of SQL statements.    | Function is also a set of SQL statements and it is used to get computed values or to perform computation. |
+| It can change the database environment.    | Function will not make any permanent changes to the database environment. | 
+| Select - Insert — update — delete statements are allowed.   | In function, only select statement is allowed, insert — update — delete are not allowed.|
+| Stored procedures cannot be executed from select, where or functions.    | It can be called from select, where, or stored procedures.   | 
+| Stored procedures can have single or multiple outputs.    | Mostly function returns scalar values / single values. |
+| It can return zero or N values.   | Function can return single / scalar value which is compulsory. |
+| We can use functions inside the stored procedure.   | Stored procedures cannot be used inside the functions. | 
+| Error handling is possible using try catch in stored procedure.   | Error handling is not possible using try catch in functions.|
+| Transactions are possible in Stored Procedures.    | Transactions are not possible in functions.   | 
+| Stored Procedures can be called using exec / execute keyword followed by the Stored Procedure name.    | Functions can be called by using the select statement followed by the function name. |
 
-**6.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
+▶️ [Functions VS Stored Procedures | SQL Interview Questions And Answers](https://www.youtube.com/watch?v=Qnl95y4IiuU&t=322s)
+
+**One Liner :** 
+- Stored procedure is a mini batch program which can do anything, make permanent changes, backup database.
+- Function can return computed scalar values. You cannot make permanent changes, means you cannot use insert, update, delete statements inside functions.
+
+**4). Can Functions return Multiple Values in SQL ?**
+
+**5.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
 
 ```sql
@@ -101,7 +119,7 @@ SELECT * FROM Students
 WHERE ROLL_NO BETWEEN 20 AND 30;  
 ```
 
-**6.2). IN:** The IN operator is used to check for values contained in specific sets.  
+**5.2). IN:** The IN operator is used to check for values contained in specific sets.  
 For example, 
 
 ```sql
@@ -111,16 +129,18 @@ WHERE ROLL_NO IN (20,21,23);
 
 This query will select all those rows from the table Students where the value of the field ROLL_NO is either 20 or 21 or 23.
 
-**7). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
+**6). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
 
 **Types of Joins**
 
-**8.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
+![image](https://github.com/user-attachments/assets/da96dbfb-1021-4c83-ba5d-28e5c8247171)
 
-**8.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
+**7.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
+
+**7.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
-**8.3). Cluster and Non-Cluster Index :**
+**7.3). Cluster and Non-Cluster Index :**
 
 **Clustered Index:**  
 - A B-Tree (computed) clustered index is the index that will arrange the rows physically in the memory in sorted order.
@@ -160,15 +180,15 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
 
-**9.1). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes. Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE). They can be used for data validation, enforcing business logic, or maintaining data consistency.  
+**8.1). Trigger :** is a statement that a system executes automatically when there is any modification to the database. In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes. Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE). They can be used for data validation, enforcing business logic, or maintaining data consistency.  
 
-**9.2). How to Create Triggers in SQL?**
+**8.2). How to Create Triggers in SQL?**
 
-**9.3). Give Example of Custom Triggers in SQL?**
+**8.3). Give Example of Custom Triggers in SQL?**
 
-**9.4). Difference between Cursor and Trigger in DBMS :**
+**8.4). Difference between Cursor and Trigger in DBMS :**
 
-**10). DROP and TRUNCATE statements :**
+**9). DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
 |----------|----------|
 | The DROP command is used to remove the table definition and its contents.    | Whereas the TRUNCATE command is used to delete all the rows from the table. |
@@ -176,13 +196,13 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 | In the DROP command, a view of the table does not exist.    | While in this command, a view of the table exists. |
 | The DROP command is quick to perform but gives rise to complications.    | While this command is faster than DROP.   | 
 
-**11). How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
+**10). How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
 DISTINCT is useful in certain circumstances, but it has drawbacks that it can increase the load on the query engine to perform the sort (since it needs to compare the result set to itself to remove duplicates). We can remove duplicate entries using the following options:
 - Remove duplicates using row numbers.
 - Remove duplicates using self-Join.
 - Remove duplicates using group by.
 
-**12). What is the difference between COALESCE() & ISNULL()?**  
+**11). What is the difference between COALESCE() & ISNULL()?**  
 - **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
 Syntax:
 ```sql
@@ -195,7 +215,7 @@ Syntax:
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 ```
 
-**13). How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
+**12). How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
 There are several techniques, including:
 
 - Using appropriate indexes
@@ -203,7 +223,7 @@ There are several techniques, including:
 - Using efficient functions and operators
 - Analyzing execution plans to identify bottlenecks
 
-**14.1). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
+**13). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
 
 Virtual Tables are not real tables, but can be interacted with as if they were.  
 
@@ -226,7 +246,6 @@ SELECT * FROM customers;
 
 ![image](https://github.com/user-attachments/assets/734e5430-d62d-42b8-a5bc-7d44e1505524)
 
-
 ```sql
 CREATE VIEW customer_emails AS 
 SELECT email
@@ -236,11 +255,11 @@ FROM customers;
 ▶️ [MySQL VIEWS are awesome](https://www.youtube.com/watch?v=wciubfRhvtM)
 
 
-**15). What are Temporary Tables? What is its Scope? Its types.**
+**14). What are Temporary Tables? What is its Scope? Its types.**
 
-**16). Window Function in SQL**
+**15). Window Function in SQL**
 
-**17). What is the difference between UNION and INTERSECTION ?**
+**16). What is the difference between UNION and INTERSECTION ?**
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
 
 <p align="center">
