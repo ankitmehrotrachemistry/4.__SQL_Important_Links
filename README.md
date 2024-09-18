@@ -237,6 +237,10 @@ There are several techniques, including:
 - A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
 - Virtual Tables are not real tables, but can be interacted with as if they were.  
 
+![image](https://github.com/user-attachments/assets/9c5aa065-e16f-4635-9686-211ee564b8d4)
+
+[How are virtual tables in SQL used? Virtual Tables in SQL | Nested and complex queries in SQL](https://www.youtube.com/watch?v=NcozPy7TaDw)
+
 **Syntax**
 ```sql
 CREATE VIEW employee_attendance AS 
@@ -1076,3 +1080,18 @@ FROM Customers c
 INNER JOIN Orders o ON c.customer_id = o.customer_id
 WHERE order_date >= DATE_SUB (CURDATE)
 ```
+
+# 6). SQL in Game Development
+
+It is used to store player and world related data in a multiplayer games, like MMO games.  
+
+[How to Design a Database for Multiplayer Online Games](https://www.geeksforgeeks.org/how-to-design-a-database-for-multiplayer-online-games/)
+
+[Sample Database: Video Games (ERD and SQL)](https://www.databasestar.com/sample-database-video-games/)
+
+[Do Video Games Use Databases?](https://www.dragonflydb.io/faq/do-video-games-use-databases)
+
+[Should I Use Redis or MySQL for Game Development?](https://www.dragonflydb.io/faq/redis-vs-mysql-for-game-development)
+
+[Can I Use an SQL Database for Game Development?](https://www.dragonflydb.io/faq/use-sql-database-game-development)
+
