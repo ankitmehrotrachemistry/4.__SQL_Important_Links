@@ -741,11 +741,11 @@ LIMIT 1;
 # 3). Comprehensive Question
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/daf1b7c0-3b06-4c2e-898d-3e5f20461aaa" width="600" height="500" />
+  <img src="https://github.com/user-attachments/assets/daf1b7c0-3b06-4c2e-898d-3e5f20461aaa" width="600" height="400" />
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327" width="600" height="500" />
+  <img src="https://github.com/user-attachments/assets/baaeb7ef-0fe8-49f1-964a-b0b12ac7d327" width="600" height="400" />
 </p>
 
 **1). Write a query to fetch the EmpFname from the EmployeeInfo table in upper case and use the ALIAS name as EmpName.**  
