@@ -1179,3 +1179,4 @@ It is used to store player and world related data in a multiplayer games, like M
 
 [Can I Use an SQL Database for Game Development?](https://www.dragonflydb.io/faq/use-sql-database-game-development)
 
+[Creating account/login system and SQL Database best practices?](https://www.reddit.com/r/unrealengine/comments/fby4xn/creating_accountlogin_system_and_sql_database/)
