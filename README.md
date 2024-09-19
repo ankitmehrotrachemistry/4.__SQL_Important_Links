@@ -51,7 +51,7 @@ You would use a CTE when you want to:
 [SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e" width="600" height="400" />
+  <img src="https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e" width="700" height="400" />
 </p>
 
 **When you would use it?**   
