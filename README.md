@@ -1170,6 +1170,34 @@ WHERE order_date >= DATE_SUB (CURDATE)
 # 6). SQL in Game Development
 
 It is used to store player and world related data in a multiplayer games, like MMO games.  
+If you're working on a SQL database for a game, especially as a backend developer, you'll likely need to design tables for players, game sessions, leaderboards, inventory, and other relevant features. Here's a basic outline of what a SQL database for a game might look like:
+
+**1. Players Table**
+This stores player data such as username, email, password (hashed), and other details.
+```sql
+CREATE TABLE Players (
+    PlayerID INT PRIMARY KEY AUTO_INCREMENT,
+    Username VARCHAR(50) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    PasswordHash VARCHAR(255) NOT NULL,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+**2. GameSessions Table**
+This stores data about game sessions, such as when they started and ended, and the score the player achieved.
+```sql
+CREATE TABLE GameSessions (
+    SessionID INT PRIMARY KEY AUTO_INCREMENT,
+    PlayerID INT,
+    StartTime DATETIME,
+    EndTime DATETIME,
+    Score INT,
+    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID)
+);
+
+```
+
 
 [How to Design a Database for Multiplayer Online Games](https://www.geeksforgeeks.org/how-to-design-a-database-for-multiplayer-online-games/)
 
