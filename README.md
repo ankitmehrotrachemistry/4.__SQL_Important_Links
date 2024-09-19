@@ -11,7 +11,9 @@ It also facilitates quick data retrieval by providing a straightforward way to l
 
 **1.2). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
 
-![image](https://github.com/user-attachments/assets/aa3648ee-924a-4a76-a1da-27a2e1ce18d1)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aa3648ee-924a-4a76-a1da-27a2e1ce18d1" width="650" height="350" />
+</p>
 
 **1.3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.  
 A foreign key is a field (or collection of fields) in one table, that references the primary key of another table. The foreign key effectively establishes a link between the records in two tables, maintaining referential integrity within the database.  
