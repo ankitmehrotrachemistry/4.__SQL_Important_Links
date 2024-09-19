@@ -3,13 +3,27 @@
 ## Done upto Pg 14(SQL Problems for Single Table - Level I)    
 
 **1.1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
-A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.
+A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.  
+
+**Role of primary Key**
+The primary role of a primary key is to enforce the uniqueness of records in a table, ensuring that no two rows have the same primary key value.  
+It also facilitates quick data retrieval by providing a straightforward way to look up records. When records are indexed by the primary key, searching and sorting operations become significantly more efficient.  
 
 **1.2). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
 
-**1.3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.
+![image](https://github.com/user-attachments/assets/aa3648ee-924a-4a76-a1da-27a2e1ce18d1)
 
-**Use and Advantage of Foreign Key**  
+**1.3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.  
+A foreign key is a field (or collection of fields) in one table, that references the primary key of another table. The foreign key effectively establishes a link between the records in two tables, maintaining referential integrity within the database.  
+
+**Role of Foreign Key**  
+Foreign keys enable the representation of relationships between data by linking records in different tables. This is vital for relational databases where interconnected data is stored across multiple tables.
+
+**Difference between Primary and Foreign Key**  
+- The primary key is a unique identifier within its table, whereas a foreign key is a reference in one table to a primary key in another.
+- Primary keys enforce uniqueness within their table, ensuring each record is identifiable. Foreign keys, however, are used to establish and navigate relationships between tables.
+
+[Primary Key vs. Foreign Key: Unlocking Efficient Data Management in Databases](https://www.pingcap.com/article/primary-key-vs-foreign-key-unlocking-efficient-data-management-in-databases/#:~:text=The%20primary%20key%20is%20a,and%20navigate%20relationships%20between%20tables.)
 
 **2). CTE (Common Table Expression)**  
 A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
