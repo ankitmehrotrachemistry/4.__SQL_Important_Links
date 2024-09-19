@@ -212,7 +212,7 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 ```
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe" width="500" height="300" />
+  <img src="https://github.com/user-attachments/assets/dca0b4ac-abf7-4072-aeb9-2496f2a6bbbe" width="600" height="300" />
 </p>
 
 ▶️ [19. Clustered Index Vs Non-Clustered Index| Index in SQL by Pandey Guruji in Hindi](https://www.youtube.com/watch?v=BIZTfmuOcm8)
