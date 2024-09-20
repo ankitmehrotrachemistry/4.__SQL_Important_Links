@@ -1198,6 +1198,55 @@ CREATE TABLE GameSessions (
 
 ```
 
+**3. Inventory Table**
+This stores data about items players can own within the game.
+```csharp
+CREATE TABLE Inventory (
+    InventoryID INT PRIMARY KEY AUTO_INCREMENT,
+    PlayerID INT,
+    ItemName VARCHAR(100),
+    Quantity INT,
+    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID)
+);
+```
+
+**4. Leaderboards Table**
+This stores leaderboard data, which may be updated periodically based on game results.
+```csharp
+CREATE TABLE Leaderboards (
+    LeaderboardID INT PRIMARY KEY AUTO_INCREMENT,
+    PlayerID INT,
+    TotalScore INT,
+    Rank INT,
+    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID)
+);
+```
+
+**5. Achievements Table**
+This table holds data about achievements or badges players can earn in the game.
+```csharp
+CREATE TABLE Achievements (
+    AchievementID INT PRIMARY KEY AUTO_INCREMENT,
+    PlayerID INT,
+    AchievementName VARCHAR(100),
+    DateUnlocked DATETIME,
+    FOREIGN KEY (PlayerID) REFERENCES Players(PlayerID)
+);
+```
+
+**6. Friends Table**
+If your game has a social aspect, you can allow players to add friends.
+```csharp
+CREATE TABLE Friends (
+    PlayerID1 INT,
+    PlayerID2 INT,
+    FOREIGN KEY (PlayerID1) REFERENCES Players(PlayerID),
+    FOREIGN KEY (PlayerID2) REFERENCES Players(PlayerID),
+    PRIMARY KEY (PlayerID1, PlayerID2)
+);
+```
+This database design can be expanded based on the specific features of your game, such as guilds, real-time chat, and more complex items or gameplay mechanics.  
+
 
 [How to Design a Database for Multiplayer Online Games](https://www.geeksforgeeks.org/how-to-design-a-database-for-multiplayer-online-games/)
 
