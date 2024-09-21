@@ -1247,7 +1247,7 @@ CREATE TABLE Friends (
 ```
 This database design can be expanded based on the specific features of your game, such as guilds, real-time chat, and more complex items or gameplay mechanics.   
 
-**Game Databases**  [Game Databases](https://aws.amazon.com/gametech/databases/)  
+- **Game Databases**  ([Game Databases](https://aws.amazon.com/gametech/databases/))      
 Whether it’s leaderboards, virtual goods, or even cheat detection, players generate a ton of data that needs to be processed, stored, and accessed in real-time. Modernize your data infrastructure with AWS fully managed, purpose-built databases to delight your players.  
 
 ![image](https://github.com/user-attachments/assets/63cecf73-9b99-4777-a628-3751322698fb)
@@ -1262,7 +1262,7 @@ Game makers store session history and other time-oriented data in DynamoDB for f
 - **Use case: Leaderboard** -  
 Game makers can support simple leaderboards easily by using DynamoDB. One such use case is the ability to display top scores for a game. If a gaming company already stores players’ game state in DynamoDB, including players’ top scores, the ability to get top scores can be implemented by using a global secondary index.
 
-**Game Servers**  [Game Servers](https://aws.amazon.com/gametech/game-servers-networking/)  
+- **Game Servers**  ([Game Servers](https://aws.amazon.com/gametech/game-servers-networking/))       
 Run multiplayer games in the cloud at scale with secure, resizable compute capacity, while leveraging the AWS global infrastructure to provide a low latency player experience globally.
 
 ![image](https://github.com/user-attachments/assets/dc130c33-521b-4ece-8dbb-e2fbf2c722ba)
@@ -1274,6 +1274,11 @@ You can refer here : [Multiplayer Session-based Game Hosting on AWS](https://doc
 This architecture enables you to use Amazon GameLift multi-Region fleets and a serverless backend solution to host a session-based multiplayer game.
 
 ![image](https://github.com/user-attachments/assets/595a5df9-88da-4f0b-8ffc-5d321849d05b)
+
+- **Cloud Game Development** ([Cloud Game Development](https://aws.amazon.com/gametech/remote-game-production/))
+Build game development pipelines for distributed teams working anywhere in the world.
+
+![image](https://github.com/user-attachments/assets/f1e219b7-0563-4b83-a15a-a975d3da97d4)
 
 **Useful Links :**  
 
