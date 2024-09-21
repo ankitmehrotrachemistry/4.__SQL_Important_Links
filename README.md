@@ -1254,11 +1254,12 @@ Whether it’s leaderboards, virtual goods, or even cheat detection, players gen
 
 **Amazon DynamoDB** : Deliver games with consistent single-digit millisecond performnance, nearly unlimited throughput and storage, and automatic multi-region replication.  
 Using DynamoDB to store player game state and other player data allows game companies to accommodate high numbers of concurrent players while maintaining millisecond access latency. As an example, consider Electronic Arts (EA), a large video game company with more than 300 million registered players around the world. For EA, high concurrency can mean more than 100,000 requests per second and millions of daily active users. By migrating to DynamoDB, EA realized a 90 percent cost reduction over the old database, a MySQL cluster. EA uses DynamoDB to store game state, user data, and game inventory data in multiple tables. EA uses the user ID as the partition key and primary key (a 1:1 modeling pattern).  
-You can refer to Amazon DynamoDB here : [Amazon DynamoDB](https://aws.amazon.com/blogs/database/amazon-dynamodb-gaming-use-cases-and-design-patterns/)  
-**Use case: Player session history data store**  
+  
+**You can refer to Amazon DynamoDB here :** [Amazon DynamoDB](https://aws.amazon.com/blogs/database/amazon-dynamodb-gaming-use-cases-and-design-patterns/)  
+- **Use case: Player session history data store**  
 Game makers store session history and other time-oriented data in DynamoDB for fast lookup by player, date, and time. For example, Riot Games, which serves international players who create terabytes of data daily, stores player session history in DynamoDB. This allows its Player Support team to look up all the information for a given player quickly, such as all the player’s in-game purchases and last login time.  
 
-**Use case: Leaderboard** -  
+- **Use case: Leaderboard** -  
 Game makers can support simple leaderboards easily by using DynamoDB. One such use case is the ability to display top scores for a game. If a gaming company already stores players’ game state in DynamoDB, including players’ top scores, the ability to get top scores can be implemented by using a global secondary index.
 
 **Useful Links :**  
