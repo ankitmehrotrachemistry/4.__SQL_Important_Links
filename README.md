@@ -1262,6 +1262,19 @@ Game makers store session history and other time-oriented data in DynamoDB for f
 - **Use case: Leaderboard** -  
 Game makers can support simple leaderboards easily by using DynamoDB. One such use case is the ability to display top scores for a game. If a gaming company already stores players’ game state in DynamoDB, including players’ top scores, the ability to get top scores can be implemented by using a global secondary index.
 
+**Game Servers**  [Game Servers](https://aws.amazon.com/gametech/game-servers-networking/)  
+Run multiplayer games in the cloud at scale with secure, resizable compute capacity, while leveraging the AWS global infrastructure to provide a low latency player experience globally.
+
+![image](https://github.com/user-attachments/assets/dc130c33-521b-4ece-8dbb-e2fbf2c722ba)
+
+**Multiplayer Session-based Game Hosting on AWS**   
+
+You can refer here : [Multiplayer Session-based Game Hosting on AWS](https://docs.aws.amazon.com/architecture-diagrams/latest/multiplayer-session-based-game-hosting-on-aws/multiplayer-session-based-game-hosting-on-aws.html)
+
+This architecture enables you to use Amazon GameLift multi-Region fleets and a serverless backend solution to host a session-based multiplayer game.
+
+![image](https://github.com/user-attachments/assets/595a5df9-88da-4f0b-8ffc-5d321849d05b)
+
 **Useful Links :**  
 
 [How to Design a Database for Multiplayer Online Games](https://www.geeksforgeeks.org/how-to-design-a-database-for-multiplayer-online-games/)
