@@ -1282,6 +1282,8 @@ Build game development pipelines for distributed teams working anywhere in the w
 
 **Useful Links :**  
 
+[Scaling Multiplayer Game Servers With GCP (Cloud Next '19)](https://www.youtube.com/watch?v=dAKAWprvbso)
+
 [How to Design a Database for Multiplayer Online Games](https://www.geeksforgeeks.org/how-to-design-a-database-for-multiplayer-online-games/)
 
 [Sample Database: Video Games (ERD and SQL)](https://www.databasestar.com/sample-database-video-games/)
