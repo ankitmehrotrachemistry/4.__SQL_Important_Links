@@ -405,6 +405,8 @@ list, which shows the Transaction processing steps.
 2. Process Database Commands.  
 3. Check for Errors ( if occurs RollBack else Commit).  
 
+![image](https://github.com/user-attachments/assets/b9268818-ed92-4645-85e1-0cb3e539e15a)
+
 # 2). SQL query
 
 **1.1). SQL query to find the names of employees starting with ‘A’**
