@@ -742,7 +742,84 @@ ORDER BY your_primary_key_column DESC
 LIMIT 1;
 ```
 
-# 3). Comprehensive Question
+
+# 4). JOIN Based Questions
+
+**1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
+
+```sql
+SELECT e.EmployeeID, m.ManagerName
+FROM Employees e
+LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
+
+```
+
+**2). SQL query to find employees who have never placed an order.**
+
+```sql
+SELECT e.EmployeeID, e.EmployeeName  
+FROM Employees e  
+LEFT JOIN Orders o ON e.EmployeeID = o.CustomerID  
+WHERE o.CustomerID IS NULL;
+
+```
+
+**3). SQL query to find the department with the highest average salary for employees who have been with the company for more than 2 years.**
+
+```sql
+SELECT d.DepartmentName, AVG(e.Salary) AS AverageSalary  
+FROM Employees e  
+INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID  
+WHERE e.HireDate < DATEADD(year, -2, GETDATE())  
+GROUP BY d.DepartmentName  
+ORDER BY AverageSalary DESC  
+LIMIT 1;  
+
+```
+
+**4). SQL query to find the manager hierarchy for a specific employee, showing all levels up to the CEO.**
+
+```sql
+WITH ManagerHierarchy (EmployeeID, ManagerID, Level) AS (  
+  SELECT EmployeeID, ManagerID, 1 AS Level  
+  FROM Employees  
+  WHERE EmployeeID = <employee_id>  
+  UNION ALL  
+  SELECT e.EmployeeID, m.ManagerID, h.Level + 1  
+  FROM Employees e  
+  INNER JOIN ManagerHierarchy h ON e.EmployeeID = h.ManagerID  
+  INNER JOIN Employees m ON e.ManagerID = m.EmployeeID  
+  WHERE m.ManagerID IS NOT NULL  
+)  
+SELECT EmployeeID, ManagerID, Level  
+FROM ManagerHierarchy  
+ORDER BY Level DESC;  
+```
+
+**5). SQL query to find employees who earn more than the average salary in their department.**
+
+```sql
+SELECT e.EmployeeID, e.EmployeeName, e.Salary, e.DepartmentID  
+FROM Employees e  
+JOIN (  
+    SELECT DepartmentID, AVG(Salary) AS AvgSalary  
+    FROM Employees  
+    GROUP BY DepartmentID  
+) dept_avg  
+ON e.DepartmentID = dept_avg.DepartmentID  
+WHERE e.Salary > dept_avg.AvgSalary;  
+```
+
+**6). SQL query to Find employees with salary more than their manager's salary.**
+
+```sql
+SELECT e.EmployeeID, e.EmployeeName, e.Salary, m.EmployeeName AS ManagerName, m.Salary AS ManagerSalary
+FROM Employees e
+JOIN Employees m ON e.ManagerID = m.EmployeeID
+WHERE e.Salary > m.Salary;
+```
+
+# 5). Comprehensive Question
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/daf1b7c0-3b06-4c2e-898d-3e5f20461aaa" width="600" height="300" />
@@ -1022,83 +1099,7 @@ ORDER BY your_primary_key_column
 DESC LIMIT 1;
 ```
 
-# 4). JOIN Based Questions
-
-**1). SQL query to find the manager for each employee in a company, even if the employee doesn't have a manager assigned.**
-
-```sql
-SELECT e.EmployeeID, m.ManagerName
-FROM Employees e
-LEFT JOIN Employees m ON e.ManagerID = m.EmployeeID;
-
-```
-
-**2). SQL query to find employees who have never placed an order.**
-
-```sql
-SELECT e.EmployeeID, e.EmployeeName  
-FROM Employees e  
-LEFT JOIN Orders o ON e.EmployeeID = o.CustomerID  
-WHERE o.CustomerID IS NULL;
-
-```
-
-**3). SQL query to find the department with the highest average salary for employees who have been with the company for more than 2 years.**
-
-```sql
-SELECT d.DepartmentName, AVG(e.Salary) AS AverageSalary  
-FROM Employees e  
-INNER JOIN Departments d ON e.DepartmentID = d.DepartmentID  
-WHERE e.HireDate < DATEADD(year, -2, GETDATE())  
-GROUP BY d.DepartmentName  
-ORDER BY AverageSalary DESC  
-LIMIT 1;  
-
-```
-
-**4). SQL query to find the manager hierarchy for a specific employee, showing all levels up to the CEO.**
-
-```sql
-WITH ManagerHierarchy (EmployeeID, ManagerID, Level) AS (  
-  SELECT EmployeeID, ManagerID, 1 AS Level  
-  FROM Employees  
-  WHERE EmployeeID = <employee_id>  
-  UNION ALL  
-  SELECT e.EmployeeID, m.ManagerID, h.Level + 1  
-  FROM Employees e  
-  INNER JOIN ManagerHierarchy h ON e.EmployeeID = h.ManagerID  
-  INNER JOIN Employees m ON e.ManagerID = m.EmployeeID  
-  WHERE m.ManagerID IS NOT NULL  
-)  
-SELECT EmployeeID, ManagerID, Level  
-FROM ManagerHierarchy  
-ORDER BY Level DESC;  
-```
-
-**5). SQL query to find employees who earn more than the average salary in their department.**
-
-```sql
-SELECT e.EmployeeID, e.EmployeeName, e.Salary, e.DepartmentID  
-FROM Employees e  
-JOIN (  
-    SELECT DepartmentID, AVG(Salary) AS AvgSalary  
-    FROM Employees  
-    GROUP BY DepartmentID  
-) dept_avg  
-ON e.DepartmentID = dept_avg.DepartmentID  
-WHERE e.Salary > dept_avg.AvgSalary;  
-```
-
-**6). SQL query to Find employees with salary more than their manager's salary.**
-
-```sql
-SELECT e.EmployeeID, e.EmployeeName, e.Salary, m.EmployeeName AS ManagerName, m.Salary AS ManagerSalary
-FROM Employees e
-JOIN Employees m ON e.ManagerID = m.EmployeeID
-WHERE e.Salary > m.Salary;
-```
-
-# 5). Tricky Interview Question
+# 6). Tricky Interview Question
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/768befff-5477-4bfe-82c1-64b678edf436" width="400" height="300" />
@@ -1171,7 +1172,7 @@ INNER JOIN Orders o ON c.customer_id = o.customer_id
 WHERE order_date >= DATE_SUB (CURDATE)
 ```
 
-# 6). SQL in Game Development
+# 7). SQL in Game Development
 
 It is used to store player and world related data in a multiplayer games, like MMO games.  
 If you're working on a SQL database for a game, especially as a backend developer, you'll likely need to design tables for players, game sessions, leaderboards, inventory, and other relevant features. Here's a basic outline of what a SQL database for a game might look like:
