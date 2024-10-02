@@ -40,125 +40,9 @@ You would use a CTE when you want to:
 
 [SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
 
-**3.1). Stored Procedures**  
-- Stored Procedure is a function consists of many SQL statement to access the database system. 
-- Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
-- A SQL Stored Procedure is a named set of one or more SQL statements that can be executed together. 
-- It is a database object that is created and stored in the database management system. 
-- Stored procedures are typically used for performing common database operations, data processing, and automation of complex tasks. 
-- They are particularly valuable for enhancing database security, modularity, and code reusability.
+**3). Can Functions return Multiple Values in SQL ?**
 
-[SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e" width="700" height="400" />
-</p>
-
-**When you would use it?**   
-You would use SQL Stored Procedures when you want to:  
-**1. Enhance security:** By allowing controlled access to database operations and reducing the risk of SQL injection attacks.  
-**2. Modularize code:** To break down complex SQL logic into manageable, reusable modules for improved maintainability.  
-**3. Improve performance:** By reducing the overhead of repeatedly sending SQL statements to the database.  
-**4. Automate tasks:** For automating routine or complex database operations and data processing tasks.  
-**5. Implement business logic:** To encapsulate business rules and processes directly in the database.  
-
-**3.2). How we can create Stored Procedures?**  
-The syntax for creating and executing a SQL Stored Procedure varies slightly depending on the database management system (DBMS) being used. However, here's a generic template:
-```sql
-CREATE PROCEDURE procedure_name
-    (parameter1 data_type, parameter2 data_type, ...)
-AS
-BEGIN
-    -- SQL statements and logic
-END;
-```
-
-[Learn about Stored Procedures in SQL](https://www.boardinfinity.com/blog/learn-about-stored-procedures-in-sql/)
-
-- procedure_name: The name of the stored procedure.
-- (parameter1, parameter2, ...): Optional input parameters for the procedure.
-- data_type: The data type for each parameter.
-- AS BEGIN ... END: The block of SQL statements and logic to be executed by the procedure.
-
-**Example query**
-Here's an example of a simple SQL Stored Procedure in SQL Server that retrieves the names of employees working in a specific department:  
-```sql
-CREATE PROCEDURE GetEmployeesInDepartment
-    @DepartmentID INT
-AS
-BEGIN
-    SELECT EmployeeName
-    FROM Employees
-    WHERE DepartmentID = @DepartmentID;
-END;
-```
-
-▶️ [Passing Large Datasets into SQL Server Stored Procedures](https://www.youtube.com/watch?app=desktop&v=jXBYULaUMMs)
-
-**3.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
-
-1. Use SET NOCOUNT ON. [SET NOCOUNT ON statement usage and performance benefits in SQL Server](https://www.sqlshack.com/set-nocount-on-statement-usage-and-performance-benefits-in-sql-server/)    
-2. Specify column names instead of using * in SELECT statement.  
-3. Use schema name before objects or tablenames.  
-Example: SELECT EmplD, Name FROM dbo. Employee  
-4. Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections.  
-5. Use EXISTS () instead of COUNT().  
-Example :SELECT Count(1) FROM dbo. Employee  
-Example: IF( EXISTS (SELECT 1 FROM db Employees))  
-6. Use TRANSACTION when required only  
-
-▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
-
-**3.4). How to handle Errors in the Stored Procedure ?**
-The TRY..CATCH block is used in SQL Server to gracefully handle exceptions. A TRY block may be used to contain a collection of T-SQL queries. When an error occurs in the TRY block, control is then transferred to the CATCH block, which contains further SQL queries to deal with the problem. System methods like ERROR NUMBER(), ERROR STATE(), and ERROR SEVERITY() can be used in the CATCH block to retrieve information about errors. 
-
-The uspEmpUpdate stored procedure error is handled in the example that follows.  
-
-```sql
-CREATE PROCEDURE uspUpdateEmpSalary
-(
-     @empId int
-     ,@salary float
-)
-AS
-BEGIN TRY
-    UPDATE dbo.Employee
-    SET Salary = @salary
-    WHERE EmployeeID = @empId
-END TRY
-BEGIN CATCH
-    SELECT
-     ERROR_NUMBER() AS ErrorNumber  
-     ,ERROR_SEVERITY() AS ErrorSeverity  
-     ,ERROR_STATE() AS ErrorState  
-     ,ERROR_MESSAGE() AS ErrorMessage;
-END CATCH
-```
-
-**3.5). What is the difference between Stored Procedure and Functions ?**
-
-| Stored Procedure | Functions |
-|----------|----------|
-| It is a mini batch program or set of SQL statements.    | Function is also a set of SQL statements and it is used to get computed values or to perform computation. |
-| It can change the database environment.    | Function will not make any permanent changes to the database environment. | 
-| Select - Insert — update — delete statements are allowed.   | In function, only select statement is allowed, insert — update — delete are not allowed.|
-| Stored procedures cannot be executed from select, where or functions.    | It can be called from select, where, or stored procedures.   | 
-| Stored procedures can have single or multiple outputs.    | Mostly function returns scalar values / single values. |
-| It can return zero or N values.   | Function can return single / scalar value which is compulsory. |
-| We can use functions inside the stored procedure.   | Stored procedures cannot be used inside the functions. | 
-| Error handling is possible using try catch in stored procedure.   | Error handling is not possible using try catch in functions.|
-| Transactions are possible in Stored Procedures.    | Transactions are not possible in functions.   | 
-| Stored Procedures can be called using exec / execute keyword followed by the Stored Procedure name.    | Functions can be called by using the select statement followed by the function name. |
-
-▶️ [Functions VS Stored Procedures | SQL Interview Questions And Answers](https://www.youtube.com/watch?v=Qnl95y4IiuU&t=322s)
-
-**One Liner :** 
-- Stored procedure is a mini batch program which can do anything, make permanent changes, backup database.
-- Function can return computed scalar values. You cannot make permanent changes, means you cannot use insert, update, delete statements inside functions.
-
-**4). Can Functions return Multiple Values in SQL ?**
-
-**5.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
+**4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
 
 ```sql
@@ -166,7 +50,7 @@ SELECT * FROM Students
 WHERE ROLL_NO BETWEEN 20 AND 30;  
 ```
 
-**5.2). IN:** The IN operator is used to check for values contained in specific sets.  
+**4.2). IN:** The IN operator is used to check for values contained in specific sets.  
 For example, 
 
 ```sql
@@ -176,18 +60,18 @@ WHERE ROLL_NO IN (20,21,23);
 
 This query will select all those rows from the table Students where the value of the field ROLL_NO is either 20 or 21 or 23.
 
-**6). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
+**5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
 
 **Types of Joins**
 
 ![image](https://github.com/user-attachments/assets/da96dbfb-1021-4c83-ba5d-28e5c8247171)
 
-**7.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
+**6.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
 
-**7.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
+**6.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
-**7.3). Cluster and Non-Cluster Index :**
+**6.3). Cluster and Non-Cluster Index :**
 
 **Clustered Index:**  
 - A B-Tree (computed) clustered index is the index that will arrange the rows physically in the memory in sorted order.
@@ -229,7 +113,7 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
 
-**8.1). Trigger :**  
+**7.1). Trigger :**  
 - Trigger is a statement that a system executes automatically when there is any modification to the database.
 - In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
 - Triggers are piece of logic or set of SQL statements which you want to execute when certain events (insert-update-delete) happens.
@@ -238,15 +122,15 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
   
 ▶️ [Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
 
-**8.2). How to Create Triggers in SQL?**
+**7.2). How to Create Triggers in SQL?**
 
 ▶️ [How to Create Insert Trigger Using SQL Server](https://www.youtube.com/watch?v=KLJ29y3qqyk)
 
-**8.3). Give Example of Custom Triggers in SQL?**
+**87.3). Give Example of Custom Triggers in SQL?**
 
-**8.4). Difference between Cursor and Trigger in DBMS :**
+**7.4). Difference between Cursor and Trigger in DBMS :**
 
-**9). DROP and TRUNCATE statements :**
+**8). DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
 |----------|----------|
 | The DROP command is used to remove the table definition and its contents.    | Whereas the TRUNCATE command is used to delete all the rows from the table. |
@@ -254,13 +138,13 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 | In the DROP command, a view of the table does not exist.    | While in this command, a view of the table exists. |
 | The DROP command is quick to perform but gives rise to complications.    | While this command is faster than DROP.   | 
 
-**10). How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
+**9). How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
 DISTINCT is useful in certain circumstances, but it has drawbacks that it can increase the load on the query engine to perform the sort (since it needs to compare the result set to itself to remove duplicates). We can remove duplicate entries using the following options:
 - Remove duplicates using row numbers.
 - Remove duplicates using self-Join.
 - Remove duplicates using group by.
 
-**11). What is the difference between COALESCE() & ISNULL()?**  
+**10). What is the difference between COALESCE() & ISNULL()?**  
 - **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
 Syntax:
 ```sql
@@ -273,7 +157,7 @@ Syntax:
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 ```
 
-**12). How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
+**11). How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
 There are several techniques, including:
 
 - Using appropriate indexes
@@ -281,7 +165,7 @@ There are several techniques, including:
 - Using efficient functions and operators
 - Analyzing execution plans to identify bottlenecks
 
-**13). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
+**12). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
 
 - In SQL, a view is a virtual table based on the result-set of an SQL statement.
 - A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
@@ -328,7 +212,7 @@ DROP VIEW [Brazil Customers];
 
 ▶️ [MySQL VIEWS are awesome](https://www.youtube.com/watch?v=wciubfRhvtM)
 
-**14). What are Temporary Tables? What is its Scope? Its types.**
+**13). What are Temporary Tables? What is its Scope? Its types.**
 
 - Temporary tables are tables that exist temporarily on the SQL Server.
 - Temporary tables are stored in tempdb.
@@ -351,7 +235,7 @@ CREATE TEMPORARY TABLE temp_table (
 
 Temporary SQL tables are a valuable tool in the world of database management and query optimization. They offer various benefits and can significantly enhance your SQL experience.
 
-**15). Window Function in SQL**
+**14). Window Function in SQL**
 Window functions apply ranking and aggregation functions over a certain window (set of rows). The window is defined by the OVER clause when used with window functions. the following two things:
 divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
 rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
@@ -362,7 +246,7 @@ rows within such partitions are put in a certain sequence. (The clause ORDER BY 
 
 [SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
 
-**16). What is the difference between UNION and INTERSECTION ?**
+**15). What is the difference between UNION and INTERSECTION ?**
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
 
 <p align="center">
@@ -392,7 +276,7 @@ FROM Department;
 | Manoj|   
 | Rahul |  
 
-**17). What is Transaction?**  
+**16). What is Transaction?**  
 A transaction is a set of SQL statements that should be executed as one unit. That means a transaction ensures that either all of the command succeeds or none of them. If one of the commands in the transaction fails, all of the com-
 mands fail and any data that is modified in the database is rolled back.
 
@@ -407,7 +291,125 @@ list, which shows the Transaction processing steps.
 
 ![image](https://github.com/user-attachments/assets/b9268818-ed92-4645-85e1-0cb3e539e15a)
 
-# 2). SQL query
+# 2). Stored Procedures
+
+**2.1). Stored Procedures**  
+- Stored Procedure is a function consists of many SQL statement to access the database system. 
+- Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
+- A SQL Stored Procedure is a named set of one or more SQL statements that can be executed together. 
+- It is a database object that is created and stored in the database management system. 
+- Stored procedures are typically used for performing common database operations, data processing, and automation of complex tasks. 
+- They are particularly valuable for enhancing database security, modularity, and code reusability.
+
+[SQL Stored Procedures](https://hightouch.com/sql-dictionary/sql-stored-procedures)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5b6c82c4-4a5c-4719-becd-bb77213e048e" width="700" height="400" />
+</p>
+
+**When you would use it?**   
+You would use SQL Stored Procedures when you want to:  
+**1. Enhance security:** By allowing controlled access to database operations and reducing the risk of SQL injection attacks.  
+**2. Modularize code:** To break down complex SQL logic into manageable, reusable modules for improved maintainability.  
+**3. Improve performance:** By reducing the overhead of repeatedly sending SQL statements to the database.  
+**4. Automate tasks:** For automating routine or complex database operations and data processing tasks.  
+**5. Implement business logic:** To encapsulate business rules and processes directly in the database.  
+
+**2.2). How we can create Stored Procedures?**  
+The syntax for creating and executing a SQL Stored Procedure varies slightly depending on the database management system (DBMS) being used. However, here's a generic template:
+```sql
+CREATE PROCEDURE procedure_name
+    (parameter1 data_type, parameter2 data_type, ...)
+AS
+BEGIN
+    -- SQL statements and logic
+END;
+```
+
+[Learn about Stored Procedures in SQL](https://www.boardinfinity.com/blog/learn-about-stored-procedures-in-sql/)
+
+- procedure_name: The name of the stored procedure.
+- (parameter1, parameter2, ...): Optional input parameters for the procedure.
+- data_type: The data type for each parameter.
+- AS BEGIN ... END: The block of SQL statements and logic to be executed by the procedure.
+
+**Example query**
+Here's an example of a simple SQL Stored Procedure in SQL Server that retrieves the names of employees working in a specific department:  
+```sql
+CREATE PROCEDURE GetEmployeesInDepartment
+    @DepartmentID INT
+AS
+BEGIN
+    SELECT EmployeeName
+    FROM Employees
+    WHERE DepartmentID = @DepartmentID;
+END;
+```
+
+▶️ [Passing Large Datasets into SQL Server Stored Procedures](https://www.youtube.com/watch?app=desktop&v=jXBYULaUMMs)
+
+**2.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
+
+1. Use SET NOCOUNT ON. [SET NOCOUNT ON statement usage and performance benefits in SQL Server](https://www.sqlshack.com/set-nocount-on-statement-usage-and-performance-benefits-in-sql-server/)    
+2. Specify column names instead of using * in SELECT statement.  
+3. Use schema name before objects or tablenames.  
+Example: SELECT EmplD, Name FROM dbo. Employee  
+4. Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections.  
+5. Use EXISTS () instead of COUNT().  
+Example :SELECT Count(1) FROM dbo. Employee  
+Example: IF( EXISTS (SELECT 1 FROM db Employees))  
+6. Use TRANSACTION when required only  
+
+▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
+
+**2.4). How to handle Errors in the Stored Procedure ?**
+The TRY..CATCH block is used in SQL Server to gracefully handle exceptions. A TRY block may be used to contain a collection of T-SQL queries. When an error occurs in the TRY block, control is then transferred to the CATCH block, which contains further SQL queries to deal with the problem. System methods like ERROR NUMBER(), ERROR STATE(), and ERROR SEVERITY() can be used in the CATCH block to retrieve information about errors. 
+
+The uspEmpUpdate stored procedure error is handled in the example that follows.  
+
+```sql
+CREATE PROCEDURE uspUpdateEmpSalary
+(
+     @empId int
+     ,@salary float
+)
+AS
+BEGIN TRY
+    UPDATE dbo.Employee
+    SET Salary = @salary
+    WHERE EmployeeID = @empId
+END TRY
+BEGIN CATCH
+    SELECT
+     ERROR_NUMBER() AS ErrorNumber  
+     ,ERROR_SEVERITY() AS ErrorSeverity  
+     ,ERROR_STATE() AS ErrorState  
+     ,ERROR_MESSAGE() AS ErrorMessage;
+END CATCH
+```
+
+**2.5). What is the difference between Stored Procedure and Functions ?**
+
+| Stored Procedure | Functions |
+|----------|----------|
+| It is a mini batch program or set of SQL statements.    | Function is also a set of SQL statements and it is used to get computed values or to perform computation. |
+| It can change the database environment.    | Function will not make any permanent changes to the database environment. | 
+| Select - Insert — update — delete statements are allowed.   | In function, only select statement is allowed, insert — update — delete are not allowed.|
+| Stored procedures cannot be executed from select, where or functions.    | It can be called from select, where, or stored procedures.   | 
+| Stored procedures can have single or multiple outputs.    | Mostly function returns scalar values / single values. |
+| It can return zero or N values.   | Function can return single / scalar value which is compulsory. |
+| We can use functions inside the stored procedure.   | Stored procedures cannot be used inside the functions. | 
+| Error handling is possible using try catch in stored procedure.   | Error handling is not possible using try catch in functions.|
+| Transactions are possible in Stored Procedures.    | Transactions are not possible in functions.   | 
+| Stored Procedures can be called using exec / execute keyword followed by the Stored Procedure name.    | Functions can be called by using the select statement followed by the function name. |
+
+▶️ [Functions VS Stored Procedures | SQL Interview Questions And Answers](https://www.youtube.com/watch?v=Qnl95y4IiuU&t=322s)
+
+**One Liner :** 
+- Stored procedure is a mini batch program which can do anything, make permanent changes, backup database.
+- Function can return computed scalar values. You cannot make permanent changes, means you cannot use insert, update, delete statements inside functions.
+
+# 3). SQL query
 
 **1.1). SQL query to find the names of employees starting with ‘A’**
 
