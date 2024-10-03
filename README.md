@@ -425,6 +425,65 @@ END CATCH
 - Stored procedure is a mini batch program which can do anything, make permanent changes, backup database.
 - Function can return computed scalar values. You cannot make permanent changes, means you cannot use insert, update, delete statements inside functions.
 
+**Parameters**  
+The most important part is parameters. Parameters are used to pass values to the Procedure. There are 3 different types of parameters, they are as follows:   
+**1. IN:**  
+This is the Default Parameter for the procedure. It always receives the values from calling program.  
+**2. OUT:**  
+This parameter always sends the values to the calling program.   
+**3. IN OUT:**  
+This parameter performs both the operations. It receives value from as well as sends the values to the calling program.  
+
+**Example:**  
+**Imagine a table named with emp_table stored in Database. We are writing a Procedure to update a Salary of Employee with 1000.**  
+
+```sql
+CREATE or REPLACE PROCEDURE INC_SAL(eno IN NUMBER, up_sal OUT NUMBER)
+IS
+BEGIN
+UPDATE emp_table SET salary = salary+1000 WHERE emp_no = eno;
+COMMIT;
+SELECT sal INTO up_sal FROM emp_table WHERE emp_no = eno;
+END; 
+```
+
+**Stored Procedure With One Parameter**  
+
+The following SQL statement creates a stored procedure that selects Customers from a particular City from the "Customers" table:  
+
+**Example**
+```sql
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+SELECT * FROM Customers WHERE City = @City
+GO;
+```
+
+Execute the stored procedure above as follows:
+**Example**
+
+```sql
+EXEC SelectAllCustomers @City = 'London';
+```
+
+**Stored Procedure With Multiple Parameters**  
+Setting up multiple parameters is very easy. Just list each parameter and the data type separated by a comma as shown below.  
+
+The following SQL statement creates a stored procedure that selects Customers from a particular City with a particular PostalCode from the "Customers" table:  
+
+**Example**  
+```sql
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode
+nvarchar(10)
+AS
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+GO;
+```
+Execute the stored procedure above as follows:  
+
+**Example**
+EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';  
+
 # 3). SQL query
 
 **1.1). SQL query to find the names of employees starting with ‘A’**
