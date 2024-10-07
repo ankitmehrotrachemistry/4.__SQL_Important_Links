@@ -327,9 +327,9 @@ list, which shows the Transaction processing steps.
 | 13. Inline Table Valued Function. |  
 | 14. Multiple Statement Table Valued Function.  |  
 | 15. Split Comma Separated Values.  |
-| 16. Cross apply vs Outer apply. |  
-| 17. Real-time User defined Function example. |  
-| 18. Stored Procedures vs User Defined Functions in Stored Procedures. |  
+| 16. Cross apply vs Outer apply. ([LECT 32](https://www.youtube.com/watch?v=Pymmq3aWENQ&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=32))|  
+| 17. Real-time User defined Function example. ([LECT 38](https://www.youtube.com/watch?v=GdwQCe0AciU&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=38))|  
+| 18. Stored Procedures vs User Defined Functions in Stored Procedures. ([LECT 40](https://www.youtube.com/watch?v=JHp7lvqJuIA&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=40))|  
 
 **2.1). Stored Procedures**  
 - Stored Procedure is a function consists of many SQL statement to access the database system. 
