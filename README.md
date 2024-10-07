@@ -296,18 +296,34 @@ list, which shows the Transaction processing steps.
 | Topics in Stored Procedures |
 |----------|
 |          |
-| 1. Introduction to Stored Procedures |  
-| 2. Basic Syntax |  
+| 1. Introduction to Stored Procedures. Basic Syntax |  
+| 2.  |  
 | 3. Executing Stored Procedures | 
 | 4. Input Parameters |
 | 5. Output Parameters |  
 | 6. Default Parameter Values |  
-| 7. Control Flow in Stored Procedures | 
+| 7. Control Flow in Stored Procedures |  
 | 8. Error Handling |
 | 9. Transactions in Stored Procedures |  
 | 10. Temporary Tables in Stored Procedures |  
 | 11. Dynamic SQL in Stored Procedures | 
 | 12. Recursive Stored Procedures |
+
+|----------|
+| 1. Introduction to Stored Procedures. |  
+| 2. Without Parameters Stored Procedures. |  
+| 3. With Parameters Stored Procedures. |  
+| 4. Optional Parameters in Stored Procedures. |
+| 5. Validate Parameters in Stored Procedures. |  
+| 6. Handle Null Values in Stored Procedures. |  
+| 7. Create and Execute Output Parameters Stored Procedures. |  
+| 8. Insert data in tables using Stored Procedures. |  
+| 9. How to call Multiple Stored Procedures in single Stored Procedures. |  
+| 10. Transaction Management and Excpetion Handling. |  
+| 11. User defined function in SQL. |
+| 12. Cross apply vs Outer apply. |  
+| 13. Real-time User defined Function example. |  
+| 14. How to use User Defined Functions in Stored Procedures. |  
 
 **2.1). Stored Procedures**  
 - Stored Procedure is a function consists of many SQL statement to access the database system. 
