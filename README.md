@@ -309,7 +309,9 @@ list, which shows the Transaction processing steps.
 | 11. Dynamic SQL in Stored Procedures | 
 | 12. Recursive Stored Procedures |
 
+| Topics in Stored Procedures (Tripathi Ji YouTube)|
 |----------|
+|          |
 | 1. Introduction to Stored Procedures. |  
 | 2. Without Parameters Stored Procedures. |  
 | 3. With Parameters Stored Procedures. |  
