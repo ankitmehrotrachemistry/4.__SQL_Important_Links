@@ -314,18 +314,22 @@ list, which shows the Transaction processing steps.
 |          |
 | 1. Introduction to Stored Procedures. |  
 | 2. Without Parameters Stored Procedures. |  
-| 3. With Parameters Stored Procedures. |  
+| 3. With Input and Output Parameters Stored Procedures. |  
 | 4. Optional Parameters in Stored Procedures. |
 | 5. Validate Parameters in Stored Procedures. |  
-| 6. Handle Null Values in Stored Procedures. |  
-| 7. Create and Execute Output Parameters Stored Procedures. |  
-| 8. Insert data in tables using Stored Procedures. |  
+| 6. Create and Execute Output Parameters Stored Procedures. |  
+| 7. Insert data in tables using Stored Procedures. | 
+| 8. Handle Null Values in Stored Procedures. |  
 | 9. How to call Multiple Stored Procedures in single Stored Procedures. |  
-| 10. Transaction Management and Excpetion Handling. |  
-| 11. User defined function in SQL. |
-| 12. Cross apply vs Outer apply. |  
-| 13. Real-time User defined Function example. |  
-| 14. How to use User Defined Functions in Stored Procedures. |  
+| 10. Transaction Management and Exception Handling. |  
+| 11. User defined function in SQL. | 
+| 12. Scaler Function in SQL. |  
+| 13. Inline Table Valued Function. |  
+| 14. Multiple Statement Table Valued Function.  |  
+| 15. Split Comma Separated Values.  |
+| 16. Cross apply vs Outer apply. |  
+| 17. Real-time User defined Function example. |  
+| 18. Stored Procedures vs User Defined Functions in Stored Procedures. |  
 
 **2.1). Stored Procedures**  
 - Stored Procedure is a function consists of many SQL statement to access the database system. 
