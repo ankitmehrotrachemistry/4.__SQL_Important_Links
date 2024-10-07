@@ -312,7 +312,7 @@ list, which shows the Transaction processing steps.
 | Topics in Stored Procedures (Tripathi Ji YouTube)|
 |----------|
 |          |
-| 1. Introduction to Stored Procedures. |  
+| 1. Introduction to Stored Procedures. ([LECT 17](https://www.youtube.com/watch?v=y7EBw2QOzH4&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=17))|  
 | 2. Without Parameters Stored Procedures. |  
 | 3. With Input and Output Parameters Stored Procedures. |  
 | 4. Optional Parameters in Stored Procedures. |
