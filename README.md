@@ -126,9 +126,12 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 ▶️ [How to Create Insert Trigger Using SQL Server](https://www.youtube.com/watch?v=KLJ29y3qqyk)
 
-**87.3). Give Example of Custom Triggers in SQL?**
+**7.3). Give Example of Custom Triggers in SQL?**
+
 
 **7.4). Difference between Cursor and Trigger in DBMS :**
+
+![image](https://github.com/user-attachments/assets/1e3af6dc-6710-43b4-9641-3e80d3e16366)
 
 **8). DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
