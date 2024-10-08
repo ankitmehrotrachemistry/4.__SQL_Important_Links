@@ -27,21 +27,6 @@ Foreign keys enable the representation of relationships between data by linking 
 
 [Primary Key vs. Foreign Key: Unlocking Efficient Data Management in Databases](https://www.pingcap.com/article/primary-key-vs-foreign-key-unlocking-efficient-data-management-in-databases/#:~:text=The%20primary%20key%20is%20a,and%20navigate%20relationships%20between%20tables.)
 
-**2). CTE (Common Table Expression)**  
-A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
-
-**When you would use it ?**
-
-You would use a CTE when you want to:
-- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
-- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
-- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
-- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
-
-[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
-
-**3). Can Functions return Multiple Values in SQL ?**
-
 **4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
 
@@ -248,6 +233,22 @@ rows within such partitions are put in a certain sequence. (The clause ORDER BY 
 </p>
 
 [SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
+
+**2). CTE (Common Table Expression)**  
+A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
+
+**When you would use it ?**
+
+You would use a CTE when you want to:
+- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
+- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
+- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
+- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
+
+[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
+
+**3). Can Functions return Multiple Values in SQL ?**
+
 
 **15). What is the difference between UNION and INTERSECTION ?**
 The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
