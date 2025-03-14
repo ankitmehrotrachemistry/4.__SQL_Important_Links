@@ -95,18 +95,7 @@ SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 
 ## 9. Subqueries
 
-**CTE (Common Table Expression)**  
-A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
 
-**When you would use it ?**
-
-You would use a CTE when you want to:
-- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
-- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
-- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
-- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
-
-[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
 
 
 ## 10. ALTER Statements
@@ -346,7 +335,9 @@ list, which shows the Transaction processing steps.
 | 17. Real-time User defined Function example. ([LECT 38](https://www.youtube.com/watch?v=GdwQCe0AciU&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=38))|  
 | 18. Stored Procedures vs User Defined Functions in Stored Procedures. ([LECT 40](https://www.youtube.com/watch?v=JHp7lvqJuIA&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=40))|  
 
-**2.1). Stored Procedures**  
+## 1. Stored Procedures
+
+**a). What are Stored Procedures?**  
 - Stored Procedure is a function consists of many SQL statement to access the database system. 
 - Several SQL statements are consolidated into a stored procedure and execute them whenever and wherever required.
 - A SQL Stored Procedure is a named set of one or more SQL statements that can be executed together. 
@@ -368,7 +359,7 @@ You would use SQL Stored Procedures when you want to:
 **4. Automate tasks:** For automating routine or complex database operations and data processing tasks.  
 **5. Implement business logic:** To encapsulate business rules and processes directly in the database.  
 
-**2.2). How we can create Stored Procedures?**  
+**b). How we can create Stored Procedures?**  
 The syntax for creating and executing a SQL Stored Procedure varies slightly depending on the database management system (DBMS) being used. However, here's a generic template:
 ```sql
 CREATE PROCEDURE procedure_name
@@ -540,6 +531,20 @@ EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
 **7.4). Difference between Cursor and Trigger in DBMS :**
 
 ![image](https://github.com/user-attachments/assets/1e3af6dc-6710-43b4-9641-3e80d3e16366)
+
+
+**CTE (Common Table Expression)**  
+A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
+
+**When you would use it ?**
+
+You would use a CTE when you want to:
+- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
+- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
+- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
+- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
+
+[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
 
 
 **14). Window Function in SQL**
