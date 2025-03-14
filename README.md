@@ -1,4 +1,4 @@
-# 1). SQL Theory (I am BACK)
+# ---------------------------------------------------- 1). SQL Theory (I am BACK) ---------------------------------------------------- 
 
 ## SQL Server Syllabus : 
 
@@ -295,23 +295,7 @@ list, which shows the Transaction processing steps.
 
 
 
-# 2). Stored Procedures
-
-| Topics in Stored Procedures |
-|----------|
-|          |
-| 1. Introduction to Stored Procedures. Basic Syntax |  
-| 2.  |  
-| 3. Executing Stored Procedures | 
-| 4. Input Parameters |
-| 5. Output Parameters |  
-| 6. Default Parameter Values |  
-| 7. Control Flow in Stored Procedures |  
-| 8. Error Handling |
-| 9. Transactions in Stored Procedures |  
-| 10. Temporary Tables in Stored Procedures |  
-| 11. Dynamic SQL in Stored Procedures | 
-| 12. Recursive Stored Procedures |
+# ---------------------------------------------------- 2). Stored Procedures ---------------------------------------------------- 
 
 | Topics in Stored Procedures (Tripathi Ji YouTube)|
 |----------|
@@ -335,7 +319,8 @@ list, which shows the Transaction processing steps.
 | 17. Real-time User defined Function example. ([LECT 38](https://www.youtube.com/watch?v=GdwQCe0AciU&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=38))|  
 | 18. Stored Procedures vs User Defined Functions in Stored Procedures. ([LECT 40](https://www.youtube.com/watch?v=JHp7lvqJuIA&list=PLyqxZbUeJJJpr0Mgvci1Ima-YM6iN7ooo&index=40))|  
 
-## 1. Stored Procedures
+
+## 1. Stored Procedures and Functions
 
 **a). What are Stored Procedures?**  
 - Stored Procedure is a function consists of many SQL statement to access the database system. 
@@ -392,62 +377,8 @@ END;
 
 ▶️ [Passing Large Datasets into SQL Server Stored Procedures](https://www.youtube.com/watch?app=desktop&v=jXBYULaUMMs)
 
-**2.3). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
 
-1. Use SET NOCOUNT ON. [SET NOCOUNT ON statement usage and performance benefits in SQL Server](https://www.sqlshack.com/set-nocount-on-statement-usage-and-performance-benefits-in-sql-server/)    
-2. Specify column names instead of using * in SELECT statement.  
-3. Use schema name before objects or tablenames.  
-Example: SELECT EmplD, Name FROM dbo. Employee  
-4. Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections.  
-5. Use EXISTS () instead of COUNT().  
-Example :SELECT Count(1) FROM dbo. Employee  
-Example: IF( EXISTS (SELECT 1 FROM db Employees))  
-6. Use TRANSACTION when required only  
-
-▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
-
-**2.4). How to handle Errors in the Stored Procedure ?**
-The TRY..CATCH block is used in SQL Server to gracefully handle exceptions. A TRY block may be used to contain a collection of T-SQL queries. When an error occurs in the TRY block, control is then transferred to the CATCH block, which contains further SQL queries to deal with the problem. System methods like ERROR NUMBER(), ERROR STATE(), and ERROR SEVERITY() can be used in the CATCH block to retrieve information about errors. 
-
-The uspEmpUpdate stored procedure error is handled in the example that follows.  
-
-```sql
-CREATE PROCEDURE uspUpdateEmpSalary
-(
-     @empId int
-     ,@salary float
-)
-AS
-BEGIN TRY
-    UPDATE dbo.Employee
-    SET Salary = @salary
-    WHERE EmployeeID = @empId
-END TRY
-BEGIN CATCH
-    SELECT
-     ERROR_NUMBER() AS ErrorNumber  
-     ,ERROR_SEVERITY() AS ErrorSeverity  
-     ,ERROR_STATE() AS ErrorState  
-     ,ERROR_MESSAGE() AS ErrorMessage;
-END CATCH
-```
-
-**2.5). What is the difference between Stored Procedure and Functions ?**
-
-| Stored Procedure | Functions |
-|----------|----------|
-| It is a mini batch program or set of SQL statements.    | Function is also a set of SQL statements and it is used to get computed values or to perform computation. |
-| It can change the database environment.    | Function will not make any permanent changes to the database environment. | 
-| Select - Insert — update — delete statements are allowed.   | In function, only select statement is allowed, insert — update — delete are not allowed.|
-| Stored procedures cannot be executed from select, where or functions.    | It can be called from select, where, or stored procedures.   | 
-| Stored procedures can have single or multiple outputs.    | Mostly function returns scalar values / single values. |
-| It can return zero or N values.   | Function can return single / scalar value which is compulsory. |
-| We can use functions inside the stored procedure.   | Stored procedures cannot be used inside the functions. | 
-| Error handling is possible using try catch in stored procedure.   | Error handling is not possible using try catch in functions.|
-| Transactions are possible in Stored Procedures.    | Transactions are not possible in functions.   | 
-| Stored Procedures can be called using exec / execute keyword followed by the Stored Procedure name.    | Functions can be called by using the select statement followed by the function name. |
-
-▶️ [Functions VS Stored Procedures | SQL Interview Questions And Answers](https://www.youtube.com/watch?v=Qnl95y4IiuU&t=322s)
+## 2. Stored Procedure Parameters, Control Structures
 
 **One Liner :** 
 - Stored procedure is a mini batch program which can do anything, make permanent changes, backup database.
@@ -512,7 +443,56 @@ Execute the stored procedure above as follows:
 **Example**
 EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';  
 
-**7.1). Trigger :**  
+**How to handle Errors in the Stored Procedure ?**
+The TRY..CATCH block is used in SQL Server to gracefully handle exceptions. A TRY block may be used to contain a collection of T-SQL queries. When an error occurs in the TRY block, control is then transferred to the CATCH block, which contains further SQL queries to deal with the problem. System methods like ERROR NUMBER(), ERROR STATE(), and ERROR SEVERITY() can be used in the CATCH block to retrieve information about errors. 
+
+The uspEmpUpdate stored procedure error is handled in the example that follows.  
+
+```sql
+CREATE PROCEDURE uspUpdateEmpSalary
+(
+     @empId int
+     ,@salary float
+)
+AS
+BEGIN TRY
+    UPDATE dbo.Employee
+    SET Salary = @salary
+    WHERE EmployeeID = @empId
+END TRY
+BEGIN CATCH
+    SELECT
+     ERROR_NUMBER() AS ErrorNumber  
+     ,ERROR_SEVERITY() AS ErrorSeverity  
+     ,ERROR_STATE() AS ErrorState  
+     ,ERROR_MESSAGE() AS ErrorMessage;
+END CATCH
+```
+
+## 3. Cursors in Stored Procedures
+
+
+## 4. Triggers & Functions
+
+**a). What is the difference between Stored Procedure and Functions ?**
+
+| Stored Procedure | Functions |
+|----------|----------|
+| It is a mini batch program or set of SQL statements.    | Function is also a set of SQL statements and it is used to get computed values or to perform computation. |
+| It can change the database environment.    | Function will not make any permanent changes to the database environment. | 
+| Select - Insert — update — delete statements are allowed.   | In function, only select statement is allowed, insert — update — delete are not allowed.|
+| Stored procedures cannot be executed from select, where or functions.    | It can be called from select, where, or stored procedures.   | 
+| Stored procedures can have single or multiple outputs.    | Mostly function returns scalar values / single values. |
+| It can return zero or N values.   | Function can return single / scalar value which is compulsory. |
+| We can use functions inside the stored procedure.   | Stored procedures cannot be used inside the functions. | 
+| Error handling is possible using try catch in stored procedure.   | Error handling is not possible using try catch in functions.|
+| Transactions are possible in Stored Procedures.    | Transactions are not possible in functions.   | 
+| Stored Procedures can be called using exec / execute keyword followed by the Stored Procedure name.    | Functions can be called by using the select statement followed by the function name. |
+
+▶️ [Functions VS Stored Procedures | SQL Interview Questions And Answers](https://www.youtube.com/watch?v=Qnl95y4IiuU&t=322s)
+
+
+**a). Trigger :**  
 - Trigger is a statement that a system executes automatically when there is any modification to the database.
 - In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
 - Triggers are piece of logic or set of SQL statements which you want to execute when certain events (insert-update-delete) happens.
@@ -521,19 +501,39 @@ EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
   
 ▶️ [Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
 
-**7.2). How to Create Triggers in SQL?**
+**b). How to Create Triggers in SQL?**
 
 ▶️ [How to Create Insert Trigger Using SQL Server](https://www.youtube.com/watch?v=KLJ29y3qqyk)
 
-**7.3). Give Example of Custom Triggers in SQL?**
+**c). Give Example of Custom Triggers in SQL?**
 
 
-**7.4). Difference between Cursor and Trigger in DBMS :**
+**d). Difference between Cursor and Trigger in DBMS :**
 
 ![image](https://github.com/user-attachments/assets/1e3af6dc-6710-43b4-9641-3e80d3e16366)
 
+## 5. Advanced Stored Procedures
 
-**CTE (Common Table Expression)**  
+
+## 6. Advanced Performance Tuning
+
+**a). I have an existing Stored Procedure and it has Performance Issues. What’s the ways I can look upon this issue?** <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**OR**  <br>**How to optimize a Stored Procedure or SQL Query?**  
+
+1. Use SET NOCOUNT ON. [SET NOCOUNT ON statement usage and performance benefits in SQL Server](https://www.sqlshack.com/set-nocount-on-statement-usage-and-performance-benefits-in-sql-server/)    
+2. Specify column names instead of using * in SELECT statement.  
+3. Use schema name before objects or tablenames.  
+Example: SELECT EmplD, Name FROM dbo. Employee  
+4. Do not use DYNAMIC QUERIES. They are vulnerable to SQL Injections.  
+5. Use EXISTS () instead of COUNT().  
+Example :SELECT Count(1) FROM dbo. Employee  
+Example: IF( EXISTS (SELECT 1 FROM db Employees))  
+6. Use TRANSACTION when required only  
+
+▶️ [SQL Query Optimization | SQL Query Optimization and performance tuning](https://www.youtube.com/watch?v=xYg_aycpp2Q)
+
+## 7. Advanced Features
+
+**a). CTE (Common Table Expression)**  
 A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
 
 **When you would use it ?**
@@ -546,8 +546,7 @@ You would use a CTE when you want to:
 
 [SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
 
-
-**14). Window Function in SQL**
+**b). Window Function in SQL**
 Window functions apply ranking and aggregation functions over a certain window (set of rows). The window is defined by the OVER clause when used with window functions. the following two things:
 divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
 rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
@@ -558,7 +557,12 @@ rows within such partitions are put in a certain sequence. (The clause ORDER BY 
 
 [SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
 
-# 3). SQL query
+## 8. Security and Permissions in SQL & Stored  Procedures
+## 9. Database Administration
+## 10. Case Studies & Real-World Applications
+
+
+# ---------------------------------------------------- 3). SQL query ---------------------------------------------------- 
 
 **1.1). SQL query to find the names of employees starting with ‘A’**
 
