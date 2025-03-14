@@ -66,6 +66,24 @@ WHERE ROLL_NO IN (20,21,23);
 
 This query will select all those rows from the table Students where the value of the field ROLL_NO is either 20 or 21 or 23.
 
+## 6. Functions in SQL Server
+
+**What is the difference between COALESCE() & ISNULL()?**  
+- **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
+Syntax:
+```sql
+SELECT column(s), CAOLESCE(expression_1,….,expression_n)FROM table_name;
+```
+
+- **ISNULL():** The ISNULL function has different uses in SQL Server and MySQL. In SQL Server, ISNULL() function is used to replace NULL values.
+Syntax:
+```sql
+SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
+```
+
+**Can Functions return Multiple Values in SQL ?**
+
+
 ## 8. Joins
 
 **JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
@@ -73,6 +91,69 @@ This query will select all those rows from the table Students where the value of
 **Types of Joins**
 
 ![image](https://github.com/user-attachments/assets/da96dbfb-1021-4c83-ba5d-28e5c8247171)
+
+
+## 9. Subqueries
+
+**CTE (Common Table Expression)**  
+A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
+
+**When you would use it ?**
+
+You would use a CTE when you want to:
+- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
+- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
+- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
+- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
+
+[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
+
+
+## 10. ALTER Statements
+
+**DROP and TRUNCATE statements :**
+| DROP | TRUNCATE |
+|----------|----------|
+| The DROP command is used to remove the table definition and its contents.    | Whereas the TRUNCATE command is used to delete all the rows from the table. |
+| In the DROP command, table space is freed from memory.    | While the TRUNCATE command does not free the table space from memory.   | 
+| In the DROP command, a view of the table does not exist.    | While in this command, a view of the table exists. |
+| The DROP command is quick to perform but gives rise to complications.    | While this command is faster than DROP.   | 
+
+**How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
+DISTINCT is useful in certain circumstances, but it has drawbacks that it can increase the load on the query engine to perform the sort (since it needs to compare the result set to itself to remove duplicates). We can remove duplicate entries using the following options:
+- Remove duplicates using row numbers.
+- Remove duplicates using self-Join.
+- Remove duplicates using group by.
+
+**What is the difference between UNION and INTERSECTION ?**
+The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="450" />
+</p>
+
+Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
+
+```sql
+SELECT emp_name
+FROM Employee
+WHERE dept_id = 'D1'
+
+UNION
+
+SELECT dept_name
+FROM Department;
+```
+
+**Output**
+
+| **emp_name** |  
+|Admin|  
+| Finance|   
+| HR |  
+|IT |  
+| Manoj|   
+| Rahul |  
 
 ## 11. Indexes and Query Optimization
 
@@ -122,72 +203,6 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 | In a clustered index, the index is the main data.    | In the Non-Clustered index, the index is a copy of data. |
 
 [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
-
-## 10. ALTER Statements
-
-**DROP and TRUNCATE statements :**
-| DROP | TRUNCATE |
-|----------|----------|
-| The DROP command is used to remove the table definition and its contents.    | Whereas the TRUNCATE command is used to delete all the rows from the table. |
-| In the DROP command, table space is freed from memory.    | While the TRUNCATE command does not free the table space from memory.   | 
-| In the DROP command, a view of the table does not exist.    | While in this command, a view of the table exists. |
-| The DROP command is quick to perform but gives rise to complications.    | While this command is faster than DROP.   | 
-
-**9). How do we avoid getting duplicate entries in a query without using the distinct keyword?**  
-DISTINCT is useful in certain circumstances, but it has drawbacks that it can increase the load on the query engine to perform the sort (since it needs to compare the result set to itself to remove duplicates). We can remove duplicate entries using the following options:
-- Remove duplicates using row numbers.
-- Remove duplicates using self-Join.
-- Remove duplicates using group by.
-
-**15). What is the difference between UNION and INTERSECTION ?**
-The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="450" />
-</p>
-
-Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
-
-```sql
-SELECT emp_name
-FROM Employee
-WHERE dept_id = 'D1'
-
-UNION
-
-SELECT dept_name
-FROM Department;
-```
-
-**Output**
-
-| **emp_name** |  
-|Admin|  
-| Finance|   
-| HR |  
-|IT |  
-| Manoj|   
-| Rahul |  
-
-## 6. Functions in SQL Server
-
-**What is the difference between COALESCE() & ISNULL()?**  
-- **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
-Syntax:
-```sql
-SELECT column(s), CAOLESCE(expression_1,….,expression_n)FROM table_name;
-```
-
-- **ISNULL():** The ISNULL function has different uses in SQL Server and MySQL. In SQL Server, ISNULL() function is used to replace NULL values.
-Syntax:
-```sql
-SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
-```
-
-**3). Can Functions return Multiple Values in SQL ?**
-
-
-## 11. Indexes and Query Optimization
 
 **How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
 There are several techniques, including:
@@ -269,20 +284,6 @@ CREATE TEMPORARY TABLE temp_table (
 
 Temporary SQL tables are a valuable tool in the world of database management and query optimization. They offer various benefits and can significantly enhance your SQL experience.
 
-**2). CTE (Common Table Expression)**  
-A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
-
-**When you would use it ?**
-
-You would use a CTE when you want to:
-- **Simplify complex queries:** Break down a complex SQL statement into smaller, more manageable parts to improve readability and maintainability.
-- **Avoid duplicating subqueries:** Reuse a result set across multiple parts of a query without rewriting the same subquery multiple times.
-- **Create recursive queries:** When you need to perform recursive operations, such as traversing hierarchical data structures.
-- **Improve query organization:** Organize your SQL statements by separating logical sections, making it easier to understand and debug.
-
-[SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
-
-
 ## 15. Transactions, Locks & ACID Properties
 
 **What is Transaction?**  
@@ -299,6 +300,11 @@ list, which shows the Transaction processing steps.
 3. Check for Errors ( if occurs RollBack else Commit).  
 
 ![image](https://github.com/user-attachments/assets/b9268818-ed92-4645-85e1-0cb3e539e15a)
+
+
+
+
+
 
 # 2). Stored Procedures
 
