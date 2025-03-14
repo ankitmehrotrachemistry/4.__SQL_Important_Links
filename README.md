@@ -19,7 +19,7 @@
 15. Transactions, Locks & ACID Properties
 16. Constraints
 
-## Done upto Pg 14(SQL Problems for Single Table - Level I)    
+## 2. Database and Table Creation 
 
 **1.1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
 A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.  
@@ -46,6 +46,8 @@ Foreign keys enable the representation of relationships between data by linking 
 
 [Primary Key vs. Foreign Key: Unlocking Efficient Data Management in Databases](https://www.pingcap.com/article/primary-key-vs-foreign-key-unlocking-efficient-data-management-in-databases/#:~:text=The%20primary%20key%20is%20a,and%20navigate%20relationships%20between%20tables.)
 
+## 5. Using WHERE Clause
+
 **4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
 
@@ -64,11 +66,15 @@ WHERE ROLL_NO IN (20,21,23);
 
 This query will select all those rows from the table Students where the value of the field ROLL_NO is either 20 or 21 or 23.
 
+## 8. Joins
+
 **5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
 
 **Types of Joins**
 
 ![image](https://github.com/user-attachments/assets/da96dbfb-1021-4c83-ba5d-28e5c8247171)
+
+## 11. Indexes and Query Optimization
 
 **6.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
 
@@ -117,25 +123,6 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
 
-**7.1). Trigger :**  
-- Trigger is a statement that a system executes automatically when there is any modification to the database.
-- In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
-- Triggers are piece of logic or set of SQL statements which you want to execute when certain events (insert-update-delete) happens.
-- Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE).
-- They can be used for data validation, enforcing business logic, or maintaining data consistency.
-  
-▶️ [Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
-
-**7.2). How to Create Triggers in SQL?**
-
-▶️ [How to Create Insert Trigger Using SQL Server](https://www.youtube.com/watch?v=KLJ29y3qqyk)
-
-**7.3). Give Example of Custom Triggers in SQL?**
-
-
-**7.4). Difference between Cursor and Trigger in DBMS :**
-
-![image](https://github.com/user-attachments/assets/1e3af6dc-6710-43b4-9641-3e80d3e16366)
 
 **8). DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
@@ -528,6 +515,27 @@ Execute the stored procedure above as follows:
 
 **Example**
 EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';  
+
+**7.1). Trigger :**  
+- Trigger is a statement that a system executes automatically when there is any modification to the database.
+- In a trigger, we first specify when the trigger is to be executed and then the action to be performed when the trigger executes.
+- Triggers are piece of logic or set of SQL statements which you want to execute when certain events (insert-update-delete) happens.
+- Triggers are stored procedures that automatically execute in response to specific events on a table (like INSERT, UPDATE, DELETE).
+- They can be used for data validation, enforcing business logic, or maintaining data consistency.
+  
+▶️ [Why Do We Need Triggers ? SQL Interview Questions And Answers | SQL Triggers ](https://www.youtube.com/watch?v=lqtKzFKrlfQ&t=251s)
+
+**7.2). How to Create Triggers in SQL?**
+
+▶️ [How to Create Insert Trigger Using SQL Server](https://www.youtube.com/watch?v=KLJ29y3qqyk)
+
+**7.3). Give Example of Custom Triggers in SQL?**
+
+
+**7.4). Difference between Cursor and Trigger in DBMS :**
+
+![image](https://github.com/user-attachments/assets/1e3af6dc-6710-43b4-9641-3e80d3e16366)
+
 
 # 3). SQL query
 
