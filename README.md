@@ -1,23 +1,17 @@
-#                                                        1). SQL Theory (I am BACK)
+# 1). SQL Theory (I am BACK)
 
 ## SQL Server Syllabus : 
 
-1. Introduction to Databases
-2. Database and Table Creation
-3. Insert, Update, and Delete Queries
-4. Selection of Data (Using SELECT Query)
-5. Using WHERE Clause
-6. Functions in SQL Server
+1. Introduction to Databases                            11. Indexes and Query Optimization
+2. Database and Table Creation                          12. Control Flow Statements
+3. Insert, Update, and Delete Queries                   13. Exception Handling in SQL
+4. Selection of Data (Using SELECT Query)               14. Views and Temporary Tables
+5. Using WHERE Clause                                   15. Transactions, Locks & ACID Properties
+6. Functions in SQL Server                              16. Constraints
 7. Aggregate Functions & GROUP BY
 8. Joins
 9. Subqueries
 10. ALTER Statements
-11. Indexes and Query Optimization
-12. Control Flow Statements
-13. Exception Handling in SQL
-14. Views and Temporary Tables
-15. Transactions, Locks & ACID Properties
-16. Constraints
 
 ## 2. Database and Table Creation 
 
@@ -299,7 +293,7 @@ list, which shows the Transaction processing steps.
 
 ![image](https://github.com/user-attachments/assets/b9268818-ed92-4645-85e1-0cb3e539e15a)
 
-#                                                        2). Stored Procedures
+# 2). Stored Procedures
 
 | Topics in Stored Procedures |
 |----------|
