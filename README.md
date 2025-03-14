@@ -2,33 +2,39 @@
 
 ## SQL Server Syllabus : 
 
-1. Introduction to Databases(                            )11. Indexes and Query Optimization
-2. Database and Table Creation                          12. Control Flow Statements
-3. Insert, Update, and Delete Queries                   13. Exception Handling in SQL
-4. Selection of Data (Using SELECT Query)               14. Views and Temporary Tables
-5. Using WHERE Clause                                   15. Transactions, Locks & ACID Properties
-6. Functions in SQL Server                              16. Constraints
+1. Introduction to Databases                          
+2. Database and Table Creation                          
+3. Insert, Update, and Delete Queries                   
+4. Selection of Data (Using SELECT Query)               
+5. Using WHERE Clause                                   
+6. Functions in SQL Server                             
 7. Aggregate Functions & GROUP BY
 8. Joins
 9. Subqueries
 10. ALTER Statements
-
+11. Indexes and Query Optimization
+12. Control Flow Statements
+13. Exception Handling in SQL
+14. Views and Temporary Tables
+15. Transactions, Locks & ACID Properties
+16. Constraints
+    
 ## 2. Database and Table Creation 
 
-**1.1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
+**a). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
 A primary key is a column of a table that uniquely identifies each tuple (row) in that table. Only one primary key is allowed to use in a table.  
 
 **Role of primary Key**
 The primary role of a primary key is to enforce the uniqueness of records in a table, ensuring that no two rows have the same primary key value.  
 It also facilitates quick data retrieval by providing a straightforward way to look up records. When records are indexed by the primary key, searching and sorting operations become significantly more efficient.  
 
-**1.2). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
+**b). Unique Key** Unique Key constraints also identify an individual tuple uniquely in a relation or table. A table can have more than one unique key, unlike a primary key. Unique Keys can be formed from one or more tables.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/aa3648ee-924a-4a76-a1da-27a2e1ce18d1" width="650" height="350" />
 </p>
 
-**1.3). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.  
+**c). Foreign key** is a field that can uniquely identify each row in another table. And this constraint is used to specify a field as a Foreign key.  
 A foreign key is a field (or collection of fields) in one table, that references the primary key of another table. The foreign key effectively establishes a link between the records in two tables, maintaining referential integrity within the database.  
 
 **Role of Foreign Key**  
@@ -42,7 +48,7 @@ Foreign keys enable the representation of relationships between data by linking 
 
 ## 5. Using WHERE Clause
 
-**4.1). BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
+**BETWEEN:** The BETWEEN operator is used to fetch rows based on a range of values.  
 For example,   
 
 ```sql
@@ -50,7 +56,7 @@ SELECT * FROM Students
 WHERE ROLL_NO BETWEEN 20 AND 30;  
 ```
 
-**4.2). IN:** The IN operator is used to check for values contained in specific sets.  
+**IN:** The IN operator is used to check for values contained in specific sets.  
 For example, 
 
 ```sql
@@ -62,7 +68,7 @@ This query will select all those rows from the table Students where the value of
 
 ## 8. Joins
 
-**5). JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
+**JOIN** statement is used to combine data or rows from two or more tables based on a common field between them. 
 
 **Types of Joins**
 
@@ -70,12 +76,12 @@ This query will select all those rows from the table Students where the value of
 
 ## 11. Indexes and Query Optimization
 
-**6.1). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
+**a). Index :** A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and the use of more storage space to maintain the extra copy of data. 
 
-**6.2). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
+**b). Indexing :** Indexing makes columns faster to query by creating pointers to where data is stored within a database.
 [Indexing](https://www.atlassian.com/data/sql/how-indexing-works)
 
-**6.3). Cluster and Non-Cluster Index :**
+**c). Cluster and Non-Cluster Index :**
 
 **Clustered Index:**  
 - A B-Tree (computed) clustered index is the index that will arrange the rows physically in the memory in sorted order.
@@ -119,7 +125,7 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 ## 10. ALTER Statements
 
-**8). DROP and TRUNCATE statements :**
+**DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
 |----------|----------|
 | The DROP command is used to remove the table definition and its contents.    | Whereas the TRUNCATE command is used to delete all the rows from the table. |
@@ -133,9 +139,39 @@ DISTINCT is useful in certain circumstances, but it has drawbacks that it can in
 - Remove duplicates using self-Join.
 - Remove duplicates using group by.
 
+**15). What is the difference between UNION and INTERSECTION ?**
+The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="450" />
+</p>
+
+Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
+
+```sql
+SELECT emp_name
+FROM Employee
+WHERE dept_id = 'D1'
+
+UNION
+
+SELECT dept_name
+FROM Department;
+```
+
+**Output**
+
+| **emp_name** |  
+|Admin|  
+| Finance|   
+| HR |  
+|IT |  
+| Manoj|   
+| Rahul |  
+
 ## 6. Functions in SQL Server
 
-**10). What is the difference between COALESCE() & ISNULL()?**  
+**What is the difference between COALESCE() & ISNULL()?**  
 - **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
 Syntax:
 ```sql
@@ -148,9 +184,12 @@ Syntax:
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 ```
 
+**3). Can Functions return Multiple Values in SQL ?**
+
+
 ## 11. Indexes and Query Optimization
 
-**11). How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
+**How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
 There are several techniques, including:
 
 - Using appropriate indexes
@@ -160,7 +199,7 @@ There are several techniques, including:
 
 ## 14. Views and Temporary Tables
 
-**12). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
+**Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
 
 - In SQL, a view is a virtual table based on the result-set of an SQL statement.
 - A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
@@ -207,7 +246,7 @@ DROP VIEW [Brazil Customers];
 
 ▶️ [MySQL VIEWS are awesome](https://www.youtube.com/watch?v=wciubfRhvtM)
 
-**13). What are Temporary Tables? What is its Scope? Its types.**
+**What are Temporary Tables? What is its Scope? Its types.**
 
 - Temporary tables are tables that exist temporarily on the SQL Server.
 - Temporary tables are stored in tempdb.
@@ -243,38 +282,6 @@ You would use a CTE when you want to:
 
 [SQL Common Table Expression (CTE)](https://hightouch.com/sql-dictionary/sql-common-table-expression-cte)
 
-**3). Can Functions return Multiple Values in SQL ?**
-
-
-**15). What is the difference between UNION and INTERSECTION ?**
-The UNION and INTERSECT operators in SQL allow you to combine the results of two or more SELECT queries and return only unique rows or only rows that are present in both queries, respectively.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/454bac7d-5e63-443b-a7de-1c42f2601e33" width="500" height="450" />
-</p>
-
-Here is an example of how you can use the UNION operator to combine the results of two SELECT queries:
-
-```sql
-SELECT emp_name
-FROM Employee
-WHERE dept_id = 'D1'
-
-UNION
-
-SELECT dept_name
-FROM Department;
-```
-
-**Output**
-
-| **emp_name** |  
-|Admin|  
-| Finance|   
-| HR |  
-|IT |  
-| Manoj|   
-| Rahul |  
 
 ## 15. Transactions, Locks & ACID Properties
 
