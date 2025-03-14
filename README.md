@@ -1,4 +1,4 @@
-# 1). SQL Theory (I am BACK)
+#                                                        1). SQL Theory (I am BACK)
 
 ## SQL Server Syllabus : 
 
@@ -282,7 +282,9 @@ FROM Department;
 | Manoj|   
 | Rahul |  
 
-**16). What is Transaction?**  
+## 15. Transactions, Locks & ACID Properties
+
+**What is Transaction?**  
 A transaction is a set of SQL statements that should be executed as one unit. That means a transaction ensures that either all of the command succeeds or none of them. If one of the commands in the transaction fails, all of the com-
 mands fail and any data that is modified in the database is rolled back.
 
@@ -297,7 +299,7 @@ list, which shows the Transaction processing steps.
 
 ![image](https://github.com/user-attachments/assets/b9268818-ed92-4645-85e1-0cb3e539e15a)
 
-# 2). Stored Procedures
+#                                                        2). Stored Procedures
 
 | Topics in Stored Procedures |
 |----------|
