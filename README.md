@@ -1,4 +1,4 @@
-# ---------------------------------------------------- 1). SQL Theory (I am BACK) ---------------------------------------------------- 
+# -------------------------- 1). SQL Theory (I am BACK) -------------------------- 
 
 ## SQL Server Syllabus : 
 
@@ -295,7 +295,7 @@ list, which shows the Transaction processing steps.
 
 
 
-# ---------------------------------------------------- 2). Stored Procedures ---------------------------------------------------- 
+# -------------------------- 2). Stored Procedures -------------------------- 
 
 | Topics in Stored Procedures (Tripathi Ji YouTube)|
 |----------|
@@ -562,7 +562,7 @@ rows within such partitions are put in a certain sequence. (The clause ORDER BY 
 ## 10. Case Studies & Real-World Applications
 
 
-# ---------------------------------------------------- 3). SQL query ---------------------------------------------------- 
+# -------------------------- 3). SQL query -------------------------- 
 
 **1.1). SQL query to find the names of employees starting with ‘A’**
 
