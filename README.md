@@ -2,7 +2,7 @@
 
 ## SQL Server Syllabus : 
 
-1. Introduction to Databases'                          '11. Indexes and Query Optimization
+1. Introduction to Databases&#8203;                     11. Indexes and Query Optimization
 2. Database and Table Creation                          12. Control Flow Statements
 3. Insert, Update, and Delete Queries                   13. Exception Handling in SQL
 4. Selection of Data (Using SELECT Query)               14. Views and Temporary Tables
