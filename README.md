@@ -1,5 +1,7 @@
 # 1). SQL Theory (I am BACK)
 
+## SQL Server Syllabus : 
+
 1. Introduction to Databases
 2. Database and Table Creation
 3. Insert, Update, and Delete Queries
@@ -16,8 +18,6 @@
 14. Views and Temporary Tables
 15. Transactions, Locks & ACID Properties
 16. Constraints
-
-![image](https://github.com/user-attachments/assets/b47768f4-7b5e-447f-9ccc-0fbe1a1ed96a)
 
 ## Done upto Pg 14(SQL Problems for Single Table - Level I)    
 
