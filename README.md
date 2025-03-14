@@ -123,6 +123,7 @@ Create NONCLUSTERED index IX_Employee_NonCIndex on Employee _NonCIndex(Emp_ID)
 
 [What is the difference between Clustered and Non-Clustered Indexes in SQL Server?](https://www.sqlshack.com/what-is-the-difference-between-clustered-and-non-clustered-indexes-in-sql-server/)
 
+## 10. ALTER Statements
 
 **8). DROP and TRUNCATE statements :**
 | DROP | TRUNCATE |
@@ -138,6 +139,8 @@ DISTINCT is useful in certain circumstances, but it has drawbacks that it can in
 - Remove duplicates using self-Join.
 - Remove duplicates using group by.
 
+## 6. Functions in SQL Server
+
 **10). What is the difference between COALESCE() & ISNULL()?**  
 - **COALESCE():** COALESCE function in SQL returns the first non-NULL expression among its arguments. If all the expressions evaluate to null, then the COALESCE function will return null.
 Syntax:
@@ -151,6 +154,8 @@ Syntax:
 SELECT column(s), ISNULL(column_name, value_to_replace)FROM table_name;
 ```
 
+## 11. Indexes and Query Optimization
+
 **11). How can you optimize a slow-running query? / A Query is taking more time to execute. How can we fine tune it?**  
 There are several techniques, including:
 
@@ -158,6 +163,8 @@ There are several techniques, including:
 - Avoiding unnecessary joins and subqueries
 - Using efficient functions and operators
 - Analyzing execution plans to identify bottlenecks
+
+## 14. Views and Temporary Tables
 
 **12). Create Views in Database. Virtual Table in SQL. Why we create SQL View?**  
 
@@ -228,17 +235,6 @@ CREATE TEMPORARY TABLE temp_table (
 [SQL Temp Table – How to Create a Temporary SQL Table](https://www.freecodecamp.org/news/sql-temp-table-how-to-create-a-temporary-sql-table/)
 
 Temporary SQL tables are a valuable tool in the world of database management and query optimization. They offer various benefits and can significantly enhance your SQL experience.
-
-**14). Window Function in SQL**
-Window functions apply ranking and aggregation functions over a certain window (set of rows). The window is defined by the OVER clause when used with window functions. the following two things:
-divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
-rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314" width="600" height="350" />
-</p>
-
-[SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
 
 **2). CTE (Common Table Expression)**  
 A Common Table Expression (CTE) in SQL is a temporary result set that can be referenced within a SELECT, INSERT, UPDATE, or DELETE statement. CTEs are defined using the WITH keyword and allow you to create a named, reusable subquery within your SQL statement. They provide a way to simplify complex queries and make them more readable.
@@ -536,6 +532,17 @@ EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
 
 ![image](https://github.com/user-attachments/assets/1e3af6dc-6710-43b4-9641-3e80d3e16366)
 
+
+**14). Window Function in SQL**
+Window functions apply ranking and aggregation functions over a certain window (set of rows). The window is defined by the OVER clause when used with window functions. the following two things:
+divides rows into groups called sets. (The clause "PARTITION BY" is utilised.)
+rows within such partitions are put in a certain sequence. (The clause ORDER BY is utilised.)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e059ca36-96b2-49f7-9449-4b68bc05d314" width="600" height="350" />
+</p>
+
+[SQL Window Function](https://www.boardinfinity.com/blog/window-function-in-sql/)
 
 # 3). SQL query
 
