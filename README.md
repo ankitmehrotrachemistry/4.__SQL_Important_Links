@@ -1,5 +1,24 @@
 # 1). SQL Theory (I am BACK)
 
+1. Introduction to Databases
+2. Database and Table Creation
+3. Insert, Update, and Delete Queries
+4. Selection of Data (Using SELECT Query)
+5. Using WHERE Clause
+6. Functions in SQL Server
+7. Aggregate Functions & GROUP BY
+8. Joins
+9. Subqueries
+10. ALTER Statements
+11. Indexes and Query Optimization
+12. Control Flow Statements
+13. Exception Handling in SQL
+14. Views and Temporary Tables
+15. Transactions, Locks & ACID Properties
+16. Constraints
+
+![image](https://github.com/user-attachments/assets/b47768f4-7b5e-447f-9ccc-0fbe1a1ed96a)
+
 ## Done upto Pg 14(SQL Problems for Single Table - Level I)    
 
 **1.1). Primary Key** is one of the candidate keys. One of the candidate keys is selected as the most important and becomes the primary key. There cannot be more than one primary key in a table.  
